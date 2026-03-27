@@ -435,6 +435,93 @@
     .qr-ph [data-lucide] { width:56px; height:56px; color:var(--text-faint); }
     .qr-card p { font-size:12px; color:var(--text-muted); }
 
+    /* ═══════════════════════════════════════
+       CADASTRO ALUNO
+    ═══════════════════════════════════════ */
+    #cadastro-aluno { background:var(--surface); padding-bottom:40px; }
+    .cad-hd { padding:54px 28px 18px; background:var(--white); border-bottom:1px solid var(--border-light); }
+    .cad-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .cad-form { padding:20px 28px; display:flex; flex-direction:column; gap:16px; }
+    .cad-avatar-pick { display:flex; align-items:center; gap:16px; margin-bottom:4px; }
+    .cad-av-circle { width:72px; height:72px; border-radius:50%; background:var(--surface); border:2px dashed var(--border); display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.2s; }
+    .cad-av-circle [data-lucide] { width:28px; height:28px; color:var(--text-faint); }
+    .cad-av-txt { font-size:13px; color:var(--text-muted); }
+    .cad-av-txt strong { display:block; color:var(--text-primary); font-size:14px; margin-bottom:2px; }
+    .field-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .field select { width:100%; padding:15px 18px; border:1.5px solid var(--border); border-radius:var(--r-md); font-family:var(--font-sans); font-size:15px; color:var(--text-primary); outline:none; background:var(--white); transition:all 0.2s; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 16px center; }
+    .field select:focus { border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-glow); }
+    .cad-section-title { font-family:var(--font-serif); font-size:15px; font-weight:700; color:var(--text-primary); margin-top:8px; padding-top:16px; border-top:1px solid var(--border-light); }
+    .plan-options { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; }
+    .plan-opt { padding:14px 8px; border-radius:var(--r-md); border:1.5px solid var(--border); text-align:center; cursor:pointer; transition:all 0.2s; background:var(--white); }
+    .plan-opt.selected { border-color:var(--gold); background:var(--gold-glow); }
+    .plan-opt .plan-name { font-size:13px; font-weight:700; color:var(--text-primary); }
+    .plan-opt .plan-price { font-size:11px; color:var(--text-muted); margin-top:2px; }
+
+    /* ═══════════════════════════════════════
+       FINANCEIRO
+    ═══════════════════════════════════════ */
+    #financeiro { background:var(--surface); padding-bottom:100px; }
+    .fin-hd { padding:54px 28px 18px; background:var(--white); border-bottom:1px solid var(--border-light); }
+    .fin-hd-row { display:flex; justify-content:space-between; align-items:center; }
+    .fin-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .fin-summary { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:20px 28px; }
+    .fin-box { background:var(--white); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .fin-box .fi-icon { margin-bottom:8px; }
+    .fin-box .fi-icon [data-lucide] { width:20px; height:20px; }
+    .fin-box .fi-val { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .fin-box .fi-lbl { font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500; }
+    .fin-box.highlight { background:linear-gradient(135deg, var(--red-soft), rgba(248,113,113,0.05)); border-color:rgba(248,113,113,0.2); }
+    .fin-box.highlight .fi-val { color:var(--red); }
+    .fin-month { padding:0 28px; margin-bottom:18px; }
+    .fin-month-card { background:var(--white); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .fin-month-card h4 { font-size:12px; font-weight:700; color:var(--text-secondary); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.5px; }
+    .fin-bar-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .fin-bar-lbl { font-size:12px; color:var(--text-muted); width:80px; flex-shrink:0; font-weight:500; }
+    .fin-bar-trk { flex:1; height:8px; background:var(--border-light); border-radius:4px; overflow:hidden; }
+    .fin-bar-fill { height:100%; border-radius:4px; }
+    .fin-bar-val { font-size:12px; font-weight:700; color:var(--text-secondary); width:72px; text-align:right; }
+    .fin-list-hd { display:flex; justify-content:space-between; align-items:center; padding:0 28px; margin-bottom:12px; }
+    .fin-list-hd h3 { font-family:var(--font-serif); font-size:16px; font-weight:700; color:var(--text-primary); }
+    .fin-filter { display:flex; gap:6px; }
+    .fin-fc { padding:5px 12px; border-radius:var(--r-full); border:1.5px solid var(--border); font-size:11px; font-weight:600; color:var(--text-muted); background:var(--white); cursor:pointer; transition:all 0.2s; }
+    .fin-fc.on { background:var(--red); color:var(--white); border-color:var(--red); }
+    .fin-fc.on-green { background:var(--green); color:var(--white); border-color:var(--green); }
+    .fin-list { padding:0 28px; }
+    .fin-item { background:var(--white); border-radius:var(--r-md); padding:14px 16px; display:flex; align-items:center; gap:12px; margin-bottom:8px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .fin-item-info { flex:1; }
+    .fin-item-info h5 { font-size:13px; font-weight:700; color:var(--text-primary); }
+    .fin-item-info p { font-size:11px; color:var(--text-muted); margin-top:2px; }
+    .fin-item-val { text-align:right; }
+    .fin-item-val .amount { font-family:var(--font-serif); font-size:15px; font-weight:700; }
+    .fin-item-val .due { font-size:10px; color:var(--text-muted); margin-top:2px; }
+    .fin-status { padding:3px 8px; border-radius:var(--r-full); font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.3px; }
+    .fin-status.pago { background:var(--green-soft); color:var(--green); }
+    .fin-status.vencido { background:var(--red-soft); color:var(--red); }
+    .fin-status.pendente { background:var(--gold-glow); color:var(--gold); }
+
+    /* ═══════════════════════════════════════
+       ALUNO DETAIL ACTIONS
+    ═══════════════════════════════════════ */
+    .ad-actions { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; padding:0 28px; margin-bottom:18px; }
+    .ad-act-btn { display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px 8px; border-radius:var(--r-md); border:1.5px solid var(--border); background:var(--white); cursor:pointer; transition:all 0.2s; box-shadow:var(--shadow-subtle); }
+    .ad-act-btn:active { transform:scale(0.95); background:var(--surface); }
+    .ad-act-btn [data-lucide] { width:20px; height:20px; }
+    .ad-act-btn span { font-size:10px; font-weight:600; color:var(--text-secondary); text-align:center; line-height:1.2; }
+    .ad-act-btn.whatsapp [data-lucide] { color:#25D366; }
+    .ad-act-btn.payment [data-lucide] { color:var(--gold); }
+    .ad-act-btn.edit-btn [data-lucide] { color:var(--cyan); }
+
+    /* Aluno financial history */
+    .ad-fin-sec { padding:0 28px; margin-bottom:18px; }
+    .ad-fin-sec h4 { font-family:var(--font-serif); font-size:14px; color:var(--text-primary); margin-bottom:12px; }
+    .ad-fin-item { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--border-light); }
+    .ad-fin-item:last-child { border-bottom:none; }
+    .ad-fin-left { display:flex; flex-direction:column; }
+    .ad-fin-left .month { font-size:13px; font-weight:600; color:var(--text-primary); }
+    .ad-fin-left .date { font-size:11px; color:var(--text-muted); margin-top:1px; }
+    .ad-fin-right { display:flex; align-items:center; gap:8px; }
+    .ad-fin-right .amount { font-size:13px; font-weight:700; color:var(--text-primary); }
+
     /* ── Nav label ── */
     #lbl { position:fixed; top:14px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.85); backdrop-filter:blur(8px); color:var(--white); padding:5px 16px; border-radius:var(--r-full); font-size:11px; font-weight:600; z-index:9999; opacity:0; transition:opacity 0.25s; pointer-events:none; white-space:nowrap; border:1px solid rgba(255,255,255,0.06); }
     #lbl.show { opacity:1; }
@@ -592,7 +679,7 @@
       <div class="adm-hd"><div class="adm-hd-row"><h2>Painel Admin</h2><span class="badge-g">Gestor</span></div></div>
       <div class="m-grid">
         <div class="m-card"><div class="mi"><i data-lucide="gauge" style="color:var(--cyan);"></i></div><div class="mv">78%</div><div class="ml">Ocupação hoje</div><span class="m-chg up">+5%</span></div>
-        <div class="m-card"><div class="mi"><i data-lucide="banknote" style="color:var(--green);"></i></div><div class="mv">R$4.2k</div><div class="ml">Receita do dia</div><span class="m-chg up">+12%</span></div>
+        <div class="m-card" onclick="go('financeiro')" style="cursor:pointer;"><div class="mi"><i data-lucide="banknote" style="color:var(--green);"></i></div><div class="mv">R$4.2k</div><div class="ml">Receita do dia</div><span class="m-chg up">+12%</span></div>
         <div class="m-card"><div class="mi"><i data-lucide="users" style="color:var(--gold);"></i></div><div class="mv">347</div><div class="ml">Alunos ativos</div><span class="m-chg up">+8 novos</span></div>
         <div class="m-card"><div class="mi"><i data-lucide="alert-triangle" style="color:var(--red);"></i></div><div class="mv">12</div><div class="ml">Inadimplentes</div><span class="m-chg down">+3</span></div>
       </div>
@@ -605,7 +692,7 @@
       </div>
       <div class="adm-sec"><div class="sec-hd"><h3>Alertas</h3></div>
         <div class="alert-list">
-          <div class="alert-card" onclick="go('alunos')"><div class="alert-ic" style="background:var(--red-soft);"><i data-lucide="credit-card" style="color:var(--red);"></i></div><div class="alert-txt"><h5>Mensalidades vencidas</h5><p>12 alunos com pagamento pendente</p></div><div class="alert-n" style="background:var(--red);">12</div></div>
+          <div class="alert-card" onclick="go('financeiro')"><div class="alert-ic" style="background:var(--red-soft);"><i data-lucide="credit-card" style="color:var(--red);"></i></div><div class="alert-txt"><h5>Mensalidades vencidas</h5><p>12 alunos com pagamento pendente</p></div><div class="alert-n" style="background:var(--red);">12</div></div>
           <div class="alert-card"><div class="alert-ic" style="background:var(--gold-glow);"><i data-lucide="cake" style="color:var(--gold);"></i></div><div class="alert-txt"><h5>Aniversariantes da semana</h5><p>5 alunos fazem aniversário</p></div><div class="alert-n" style="background:var(--gold);">5</div></div>
           <div class="alert-card" onclick="go('alunos')"><div class="alert-ic" style="background:rgba(0,180,216,0.08);"><i data-lucide="user-plus" style="color:var(--cyan);"></i></div><div class="alert-txt"><h5>Novos cadastros</h5><p>8 alunos esta semana</p></div><div class="alert-n" style="background:var(--cyan);">8</div></div>
         </div>
@@ -615,7 +702,8 @@
 
     <!-- ═══ ALUNOS ═══ -->
     <div class="scr" id="alunos">
-      <div class="al-hd"><div class="al-hd-row"><h2>Alunos</h2><span class="al-count">347 cadastrados</span></div>
+      <div class="al-hd"><div class="al-hd-row"><h2>Alunos</h2><button class="btn-sm gold" onclick="go('cadastro-aluno')" style="display:flex;align-items:center;gap:4px;padding:8px 16px;"><i data-lucide="user-plus" style="width:14px;height:14px;"></i> Novo</button></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0 14px;"><span class="al-count">347 cadastrados</span></div>
         <div class="search"><i data-lucide="search"></i><input placeholder="Buscar aluno..."></div>
       </div>
       <div class="f-row"><div class="fc on">Todos</div><div class="fc">Ativos</div><div class="fc">Vencidos</div><div class="fc">Iniciante</div><div class="fc">Intermediário</div><div class="fc">Avançado</div></div>
@@ -635,6 +723,11 @@
         <div class="ad-av">MS</div><div class="ad-name">Marcos Silva</div><div class="ad-level">⭐ Intermediário</div>
         <div class="ad-tags"><span class="ad-tag">Plano Pro</span><span class="ad-tag">Torneio</span><span class="ad-tag">🎂 Hoje!</span></div>
       </div>
+      <div class="ad-actions">
+        <div class="ad-act-btn whatsapp"><i data-lucide="message-circle"></i><span>WhatsApp</span></div>
+        <div class="ad-act-btn payment" onclick="go('financeiro')"><i data-lucide="banknote"></i><span>Pagamento</span></div>
+        <div class="ad-act-btn edit-btn"><i data-lucide="pencil"></i><span>Editar</span></div>
+      </div>
       <div class="stats-row"><div class="stat-box"><div class="sn">24</div><div class="sl">Jogos/mês</div></div><div class="stat-box"><div class="sn">92%</div><div class="sl">Frequência</div></div><div class="stat-box"><div class="sn">3</div><div class="sl">Torneios</div></div></div>
       <div class="info-sec"><h4>Informações</h4>
         <div class="info-r"><span class="lbl">Telefone</span><span class="val">(31) 99876-5432</span></div>
@@ -645,6 +738,81 @@
         <div class="info-r"><span class="lbl">Vencimento</span><span class="val">15/04/2026</span></div>
       </div>
       <div class="info-sec"><h4>Quadras Favoritas</h4><div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="fav-chip">Quadra 7</span><span class="fav-chip">Quadra 3</span><span class="fav-chip">Quadra 11</span></div></div>
+      <div class="ad-fin-sec"><h4>Histórico Financeiro</h4>
+        <div class="ad-fin-item"><div class="ad-fin-left"><span class="month">Março 2026</span><span class="date">Pago em 15/03</span></div><div class="ad-fin-right"><span class="amount">R$ 189,90</span><span class="fin-status pago">Pago</span></div></div>
+        <div class="ad-fin-item"><div class="ad-fin-left"><span class="month">Fevereiro 2026</span><span class="date">Pago em 14/02</span></div><div class="ad-fin-right"><span class="amount">R$ 189,90</span><span class="fin-status pago">Pago</span></div></div>
+        <div class="ad-fin-item"><div class="ad-fin-left"><span class="month">Janeiro 2026</span><span class="date">Pago em 18/01</span></div><div class="ad-fin-right"><span class="amount">R$ 189,90</span><span class="fin-status pago">Pago</span></div></div>
+      </div>
+    </div>
+
+    <!-- ═══ CADASTRO ALUNO ═══ -->
+    <div class="scr" id="cadastro-aluno">
+      <div class="cad-hd">
+        <div class="back" onclick="go('alunos')"><i data-lucide="arrow-left"></i> Voltar</div>
+        <h2>Novo Aluno</h2>
+      </div>
+      <div class="cad-form">
+        <div class="cad-avatar-pick">
+          <div class="cad-av-circle"><i data-lucide="camera"></i></div>
+          <div class="cad-av-txt"><strong>Adicionar foto</strong>Opcional</div>
+        </div>
+        <div class="field"><label>Nome completo</label><input type="text" placeholder="Nome do aluno"></div>
+        <div class="field-row">
+          <div class="field"><label>Telefone (WhatsApp)</label><input type="tel" placeholder="(31) 99999-9999"></div>
+          <div class="field"><label>Nascimento</label><input type="text" placeholder="DD/MM/AAAA"></div>
+        </div>
+        <div class="field"><label>E-mail</label><input type="email" placeholder="aluno@email.com"></div>
+        <div class="field"><label>CPF</label><input type="text" placeholder="000.000.000-00"></div>
+        <div class="cad-section-title">Nível de Jogo</div>
+        <div class="field">
+          <select>
+            <option value="" disabled selected>Selecionar nível</option>
+            <option>Iniciante</option>
+            <option>Intermediário</option>
+            <option>Avançado</option>
+            <option>Profissional</option>
+          </select>
+        </div>
+        <div class="cad-section-title">Plano</div>
+        <div class="plan-options">
+          <div class="plan-opt" onclick="document.querySelectorAll('.plan-opt').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><div class="plan-name">Basic</div><div class="plan-price">R$ 99,90/mês</div></div>
+          <div class="plan-opt selected" onclick="document.querySelectorAll('.plan-opt').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><div class="plan-name">Pro</div><div class="plan-price">R$ 189,90/mês</div></div>
+          <div class="plan-opt" onclick="document.querySelectorAll('.plan-opt').forEach(p=>p.classList.remove('selected'));this.classList.add('selected')"><div class="plan-name">Premium</div><div class="plan-price">R$ 289,90/mês</div></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Data de início</label><input type="text" placeholder="DD/MM/AAAA" value="27/03/2026"></div>
+          <div class="field"><label>Dia vencimento</label>
+            <select><option>5</option><option>10</option><option selected>15</option><option>20</option><option>25</option></select>
+          </div>
+        </div>
+        <div class="field"><label>Observações</label><input type="text" placeholder="Anotações sobre o aluno (opcional)"></div>
+        <button class="btn-fill gold" onclick="go('alunos')" style="margin-top:8px;">Cadastrar Aluno</button>
+      </div>
+    </div>
+
+    <!-- ═══ FINANCEIRO ═══ -->
+    <div class="scr" id="financeiro">
+      <div class="fin-hd"><div class="fin-hd-row"><div class="back" onclick="go('admin')" style="margin:0;"><i data-lucide="arrow-left"></i> Admin</div><h2>Financeiro</h2></div></div>
+      <div class="fin-summary">
+        <div class="fin-box"><div class="fi-icon"><i data-lucide="trending-up" style="color:var(--green);"></i></div><div class="fi-val">R$ 28.4k</div><div class="fi-lbl">Recebido no mês</div></div>
+        <div class="fin-box"><div class="fi-icon"><i data-lucide="target" style="color:var(--cyan);"></i></div><div class="fi-val">R$ 34.7k</div><div class="fi-lbl">Meta mensal</div></div>
+        <div class="fin-box highlight"><div class="fi-icon"><i data-lucide="alert-circle" style="color:var(--red);"></i></div><div class="fi-val">R$ 3.8k</div><div class="fi-lbl">Total vencido</div></div>
+        <div class="fin-box"><div class="fi-icon"><i data-lucide="clock" style="color:var(--gold);"></i></div><div class="fi-val">R$ 6.3k</div><div class="fi-lbl">A vencer (próx. 7 dias)</div></div>
+      </div>
+      <div class="fin-month"><div class="fin-month-card"><h4>Março 2026</h4>
+        <div class="fin-bar-row"><span class="fin-bar-lbl">Recebido</span><div class="fin-bar-trk"><div class="fin-bar-fill" style="width:82%;background:var(--green);"></div></div><span class="fin-bar-val">R$ 28.4k</span></div>
+        <div class="fin-bar-row"><span class="fin-bar-lbl">Pendente</span><div class="fin-bar-trk"><div class="fin-bar-fill" style="width:18%;background:var(--gold);"></div></div><span class="fin-bar-val">R$ 6.3k</span></div>
+        <div class="fin-bar-row"><span class="fin-bar-lbl">Vencido</span><div class="fin-bar-trk"><div class="fin-bar-fill" style="width:11%;background:var(--red);"></div></div><span class="fin-bar-val">R$ 3.8k</span></div>
+      </div></div>
+      <div class="fin-list-hd"><h3>Cobranças</h3><div class="fin-filter"><div class="fin-fc on">Vencidos</div><div class="fin-fc">Pendentes</div><div class="fin-fc">Pagos</div></div></div>
+      <div class="fin-list">
+        <div class="fin-item" onclick="go('aluno-detail')"><div class="al-av" style="width:40px;height:40px;font-size:13px;background:linear-gradient(135deg,var(--red),#EF4444)">RL</div><div class="fin-item-info"><h5>Rafael Lima</h5><p>Plano Basic · Vencido há 12 dias</p></div><div class="fin-item-val"><div class="amount" style="color:var(--red);">R$ 99,90</div><div class="due">Venc. 15/03</div></div></div>
+        <div class="fin-item" onclick="go('aluno-detail')"><div class="al-av" style="width:40px;height:40px;font-size:13px;background:linear-gradient(135deg,#F59E0B,#D97706)">JM</div><div class="fin-item-info"><h5>Julia Mendes</h5><p>Plano Pro · Vencido há 8 dias</p></div><div class="fin-item-val"><div class="amount" style="color:var(--red);">R$ 189,90</div><div class="due">Venc. 19/03</div></div></div>
+        <div class="fin-item" onclick="go('aluno-detail')"><div class="al-av" style="width:40px;height:40px;font-size:13px;background:linear-gradient(135deg,#8B5CF6,#7C3AED)">FS</div><div class="fin-item-info"><h5>Fernando Santos</h5><p>Plano Premium · Vencido há 5 dias</p></div><div class="fin-item-val"><div class="amount" style="color:var(--red);">R$ 289,90</div><div class="due">Venc. 22/03</div></div></div>
+        <div class="fin-item" onclick="go('aluno-detail')"><div class="al-av" style="width:40px;height:40px;font-size:13px;background:linear-gradient(135deg,#EC4899,#DB2777)">LO</div><div class="fin-item-info"><h5>Larissa Oliveira</h5><p>Plano Pro · Vencido há 3 dias</p></div><div class="fin-item-val"><div class="amount" style="color:var(--red);">R$ 189,90</div><div class="due">Venc. 24/03</div></div></div>
+        <div class="fin-item" onclick="go('aluno-detail')"><div class="al-av" style="width:40px;height:40px;font-size:13px;background:linear-gradient(135deg,#14B8A6,#0D9488)">RC</div><div class="fin-item-info"><h5>Roberto Costa</h5><p>Plano Basic · Vencido há 2 dias</p></div><div class="fin-item-val"><div class="amount" style="color:var(--red);">R$ 99,90</div><div class="due">Venc. 25/03</div></div></div>
+      </div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab" onclick="go('alunos')"><i data-lucide="users"></i><span>Alunos</span></div><div class="tab" onclick="go('admin')"><i data-lucide="bar-chart-2"></i><span>Dashboard</span></div><div class="tab on" onclick="go('financeiro')"><i data-lucide="wallet"></i><span>Financeiro</span></div><div class="tab" onclick="go('feed')"><i data-lucide="bell"></i><span>Avisos</span></div></div>
     </div>
 
     <!-- ═══ EVENTOS ═══ -->
@@ -686,7 +854,7 @@
 </div>
 
 <script>
-  const names = { splash:'Splash', onboarding:'Onboarding', login:'Login', home:'Home', quadras:'Quadras', 'booking-detail':'Detalhe da Reserva', 'booking-confirm':'Confirmação', admin:'Painel Admin', alunos:'Alunos', 'aluno-detail':'Detalhe do Aluno', eventos:'Eventos', feed:'Comunidade', perfil:'Perfil' };
+  const names = { splash:'Splash', onboarding:'Onboarding', login:'Login', home:'Home', quadras:'Quadras', 'booking-detail':'Detalhe da Reserva', 'booking-confirm':'Confirmação', admin:'Painel Admin', alunos:'Alunos', 'aluno-detail':'Detalhe do Aluno', 'cadastro-aluno':'Novo Aluno', financeiro:'Financeiro', eventos:'Eventos', feed:'Comunidade', perfil:'Perfil' };
 
   function go(id) {
     document.querySelectorAll('.scr').forEach(s => s.classList.remove('on'));
@@ -737,6 +905,7 @@
   document.addEventListener('click', e => {
     if (e.target.classList.contains('d-chip')) { document.querySelectorAll('.d-chip').forEach(c=>c.classList.remove('on')); e.target.classList.add('on'); }
     if (e.target.classList.contains('fc')) { document.querySelectorAll('.fc').forEach(c=>c.classList.remove('on')); e.target.classList.add('on'); }
+    if (e.target.classList.contains('fin-fc')) { document.querySelectorAll('.fin-fc').forEach(c=>c.classList.remove('on')); e.target.classList.add('on'); }
   });
 
   buildGrid();
