@@ -6,1308 +6,739 @@
   <title>Arena G3 - App Concept</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root {
-      --blue-deep:    #0D2137;
-      --blue-primary: #1B4B7A;
-      --blue-bright:  #00A3E0;
-      --blue-light:   #E8F4FD;
-      --orange:       #F5A623;
-      --orange-warm:  #FF8C00;
-      --orange-light: #FFF3E0;
-      --green:        #2ECC71;
-      --green-light:  #E8F8F0;
-      --red:          #E74C3C;
-      --red-light:    #FDECEB;
+      --navy:         #070E1A;
+      --navy-mid:     #0F1B2D;
+      --navy-light:   #162540;
+      --blue:         #1E6FBA;
+      --cyan:         #00B4D8;
+      --cyan-glow:    rgba(0,180,216,0.15);
+      --gold:         #D4A853;
+      --gold-warm:    #E8B84B;
+      --gold-light:   #F5DEB3;
+      --gold-glow:    rgba(212,168,83,0.15);
+      --sand:         #FDF6EC;
+      --cream:        #FAFAF7;
+      --surface:      #F6F7F9;
+      --glass:        rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.08);
+      --glass-strong: rgba(255,255,255,0.12);
+      --green:        #34D399;
+      --green-soft:   rgba(52,211,153,0.12);
+      --red:          #F87171;
+      --red-soft:     rgba(248,113,113,0.12);
+      --purple:       #A78BFA;
+      --purple-soft:  rgba(167,139,250,0.12);
       --white:        #FFFFFF;
-      --gray-50:      #F8F9FA;
-      --gray-100:     #F0F2F5;
-      --gray-200:     #E4E7EB;
-      --gray-300:     #CDD3DA;
-      --gray-400:     #9BA3AE;
-      --gray-500:     #6B7280;
-      --gray-600:     #4B5563;
-      --gray-700:     #374151;
-      --gray-800:     #1F2937;
-      --font-display: 'Archivo Black', sans-serif;
-      --font-body:    'DM Sans', sans-serif;
-      --radius-sm:    8px;
-      --radius-md:    12px;
-      --radius-lg:    16px;
-      --radius-xl:    20px;
-      --radius-full:  100px;
-      --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
-      --shadow-md:    0 4px 12px rgba(0,0,0,0.1);
-      --shadow-lg:    0 8px 24px rgba(0,0,0,0.12);
+      --text-primary: #0F172A;
+      --text-secondary:#475569;
+      --text-muted:   #94A3B8;
+      --text-faint:   #CBD5E1;
+      --border:       #E2E8F0;
+      --border-light: #F1F5F9;
+      --font-serif:   'Playfair Display', Georgia, serif;
+      --font-sans:    'Inter', -apple-system, sans-serif;
+      --r-sm:  10px;
+      --r-md:  14px;
+      --r-lg:  18px;
+      --r-xl:  24px;
+      --r-full:100px;
+      --shadow-subtle: 0 1px 2px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-card:   0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.06);
+      --shadow-elevated: 0 4px 6px rgba(0,0,0,0.04), 0 10px 24px rgba(0,0,0,0.08);
+      --shadow-glow-gold: 0 4px 20px rgba(212,168,83,0.25);
+      --shadow-glow-cyan: 0 4px 20px rgba(0,180,216,0.2);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
 
     body {
-      font-family: var(--font-body);
-      background: #0a1628;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
+      font-family: var(--font-sans);
+      background: #060b14;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; overflow: hidden;
     }
 
-    /* ── Phone Frame ── */
-    .phone-frame {
-      width: 393px;
-      height: 852px;
-      background: var(--white);
-      border-radius: 44px;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 0 0 8px #1a1a2e, 0 0 0 10px #333, 0 32px 80px rgba(0,0,0,0.6);
-    }
+    /* ── PHONE ── */
+    .phone { width:393px; height:852px; background:var(--white); border-radius:48px; overflow:hidden; position:relative; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1), 0 0 0 7px #111827, 0 0 0 8px #1f2937, 0 40px 100px rgba(0,0,0,0.7); }
+    .notch { position:absolute; top:0; left:50%; transform:translateX(-50%); width:126px; height:34px; background:#060b14; border-radius:0 0 20px 20px; z-index:1000; }
+    .notch::after { content:''; position:absolute; top:10px; left:50%; transform:translateX(-50%); width:10px; height:10px; background:#111827; border-radius:50%; }
+    .screens { width:100%; height:100%; position:relative; overflow:hidden; }
 
-    .phone-notch {
-      position: absolute;
-      top: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 126px; height: 34px;
-      background: #0a1628;
-      border-radius: 0 0 18px 18px;
-      z-index: 1000;
-    }
-    .phone-notch::after {
-      content: '';
-      position: absolute;
-      top: 10px; left: 50%;
-      transform: translateX(-50%);
-      width: 10px; height: 10px;
-      background: #1a2a3a;
-      border-radius: 50%;
-    }
+    .scr { position:absolute; inset:0; opacity:0; pointer-events:none; overflow-y:auto; overflow-x:hidden; -webkit-overflow-scrolling:touch; transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.4,0,0.2,1); transform: scale(0.97) translateY(8px); }
+    .scr.on { opacity:1; pointer-events:all; transform:scale(1) translateY(0); z-index:10; }
+    .scr::-webkit-scrollbar { display:none; }
 
-    /* ── Screens ── */
-    .screen-container { width: 100%; height: 100%; position: relative; overflow: hidden; }
+    /* ── STATUS BAR ── */
+    .sbar { height:54px; padding:14px 28px 0; display:flex; justify-content:space-between; align-items:center; font-size:13px; font-weight:600; }
+    .sbar.dk { color:rgba(255,255,255,0.8); }
+    .sbar.lt { color:var(--text-primary); }
+    .sbar-icons { display:flex; gap:5px; align-items:center; }
+    .sbar-icons [data-lucide] { width:14px; height:14px; }
 
-    .screen {
-      position: absolute; inset: 0;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.3s ease, transform 0.3s ease;
-      transform: translateX(16px);
-      overflow-y: auto; overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-    }
-    .screen.active { opacity: 1; pointer-events: all; transform: translateX(0); z-index: 10; }
-    .screen::-webkit-scrollbar { display: none; }
+    /* ── TAB BAR ── */
+    .tabs { position:absolute; bottom:0; left:0; right:0; height:84px; background:var(--white); display:flex; justify-content:space-around; align-items:flex-start; padding-top:10px; z-index:500; border-top:1px solid var(--border-light); }
+    .tabs::before { content:''; position:absolute; top:-1px; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--border), transparent); }
+    .tab { display:flex; flex-direction:column; align-items:center; gap:3px; cursor:pointer; padding:4px 14px; transition:transform 0.15s; position:relative; }
+    .tab:active { transform:scale(0.85); }
+    .tab [data-lucide] { width:21px; height:21px; color:var(--text-faint); stroke-width:1.6; transition:all 0.25s; }
+    .tab span { font-size:10px; font-weight:500; color:var(--text-muted); transition:all 0.25s; letter-spacing:0.2px; }
+    .tab.on [data-lucide] { color:var(--gold); }
+    .tab.on span { color:var(--gold); font-weight:700; }
+    .tab.on::after { content:''; position:absolute; top:-1px; width:24px; height:2px; background:var(--gold); border-radius:0 0 2px 2px; }
 
-    /* ── Status Bar ── */
-    .status-bar {
-      height: 54px; padding: 14px 24px 0;
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 13px; font-weight: 600;
-    }
-    .status-bar.dark { color: rgba(255,255,255,0.9); }
-    .status-bar.light { color: var(--gray-800); background: var(--white); }
-    .status-icons { display: flex; gap: 5px; align-items: center; }
-    .status-icons [data-lucide] { width: 15px; height: 15px; }
+    /* ── BACK ── */
+    .back { display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:600; color:var(--cyan); cursor:pointer; margin-bottom:20px; }
+    .back [data-lucide] { width:18px; height:18px; }
 
-    /* ── Tab Bar ── */
-    .tab-bar {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 84px;
-      background: var(--white);
-      border-top: 1px solid var(--gray-100);
-      display: flex; justify-content: space-around; align-items: flex-start;
-      padding-top: 10px; z-index: 500;
-      box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
-    }
-    .tab-item {
-      display: flex; flex-direction: column; align-items: center; gap: 4px;
-      cursor: pointer; padding: 4px 12px;
-      transition: transform 0.15s ease;
-    }
-    .tab-item:active { transform: scale(0.88); }
-    .tab-item [data-lucide] { width: 22px; height: 22px; color: var(--gray-300); stroke-width: 1.8; transition: color 0.2s; }
-    .tab-item span { font-size: 10px; font-weight: 500; color: var(--gray-400); transition: color 0.2s; }
-    .tab-item.active [data-lucide] { color: var(--blue-bright); }
-    .tab-item.active span { color: var(--blue-bright); font-weight: 700; }
-
-    /* ── Back button ── */
-    .back-btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 14px; font-weight: 600; color: var(--blue-bright);
-      cursor: pointer; margin-bottom: 20px;
-    }
-    .back-btn [data-lucide] { width: 18px; height: 18px; }
+    /* ── NOISE TEXTURE ── */
+    .noise::after { content:''; position:absolute; inset:0; opacity:0.03; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:128px; }
 
     /* ═══════════════════════════════════════
        SPLASH
     ═══════════════════════════════════════ */
     #splash {
-      background: linear-gradient(155deg, var(--blue-deep) 0%, #0e3258 60%, #1B4B7A 100%);
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      gap: 0; overflow: hidden;
+      background: radial-gradient(ellipse at 50% 40%, #0F2137 0%, #070E1A 70%);
+      display:flex; flex-direction:column; justify-content:center; align-items:center; overflow:hidden;
     }
-    #splash::before {
-      content: '';
-      position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 75% 25%, rgba(0,163,224,0.12) 0%, transparent 55%),
-        radial-gradient(circle at 25% 75%, rgba(245,166,35,0.08) 0%, transparent 55%);
-    }
-    .splash-logo-wrap {
-      position: relative; z-index: 2;
-      animation: fadeUp 0.9s ease both;
-    }
-    .splash-logo-wrap img {
-      width: 160px;
-      filter: brightness(0) invert(1) drop-shadow(0 0 30px rgba(255,255,255,0.15));
-    }
-    .splash-logo-wrap .logo-fallback {
-      display: none;
-      font-family: var(--font-display);
-      font-size: 80px; line-height: 1;
-      color: var(--white); letter-spacing: -2px;
-    }
-    .splash-logo-wrap .logo-fallback span { color: var(--orange); }
-    .splash-logo-wrap .logo-sub {
-      display: none;
-      font-family: var(--font-display); font-size: 20px;
-      color: var(--blue-bright); letter-spacing: 12px; text-transform: uppercase; margin-top: -4px;
-    }
+    #splash::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 65% 30%, rgba(0,180,216,0.08) 0%, transparent 50%), radial-gradient(circle at 35% 70%, rgba(212,168,83,0.06) 0%, transparent 50%); }
+    .splash-particles { position:absolute; inset:0; z-index:1; }
+    .splash-particle { position:absolute; width:2px; height:2px; background:rgba(212,168,83,0.4); border-radius:50%; animation: float 6s ease-in-out infinite; }
+    @keyframes float { 0%,100% { transform:translateY(0) scale(1); opacity:0.4; } 50% { transform:translateY(-30px) scale(1.5); opacity:0.8; } }
+    .sp1 { top:20%; left:15%; animation-delay:0s; }
+    .sp2 { top:35%; right:20%; animation-delay:1.2s; width:3px; height:3px; background:rgba(0,180,216,0.3); }
+    .sp3 { bottom:30%; left:25%; animation-delay:2.4s; }
+    .sp4 { top:60%; right:30%; animation-delay:0.8s; width:1.5px; height:1.5px; }
+    .sp5 { bottom:20%; right:15%; animation-delay:3s; background:rgba(0,180,216,0.25); }
+    .sp6 { top:15%; right:35%; animation-delay:1.8s; width:2.5px; height:2.5px; }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px) scale(0.92); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .splash-tagline {
-      position: relative; z-index: 2;
-      color: rgba(255,255,255,0.4);
-      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-      margin-top: 20px;
-      animation: fadeUp 0.9s 0.25s ease both;
-    }
-    .splash-city {
-      position: relative; z-index: 2;
-      color: rgba(255,255,255,0.2);
-      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-      margin-top: 4px;
-      animation: fadeUp 0.9s 0.35s ease both;
-    }
-    .splash-enter {
-      position: relative; z-index: 2;
-      margin-top: 56px;
-      background: var(--orange);
-      color: var(--white);
-      border: none; padding: 16px 52px;
-      border-radius: var(--radius-full);
-      font-family: var(--font-body);
-      font-size: 15px; font-weight: 700;
-      cursor: pointer; letter-spacing: 0.5px;
-      box-shadow: 0 6px 24px rgba(245,166,35,0.4);
-      transition: all 0.25s ease;
-      animation: fadeUp 0.9s 0.5s ease both;
-    }
-    .splash-enter:active { transform: scale(0.95); }
-    .splash-rings {
-      position: absolute; bottom: -60px; right: -60px;
-      width: 280px; height: 280px; z-index: 1;
-    }
-    .splash-rings circle { fill: none; stroke: rgba(0,163,224,0.07); }
+    .splash-logo { position:relative; z-index:2; text-align:center; animation: revealUp 1s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes revealUp { from { opacity:0; transform:translateY(32px) scale(0.9); } to { opacity:1; transform:translateY(0) scale(1); } }
+    .splash-logo img { width:140px; filter:brightness(0) invert(1) drop-shadow(0 0 40px rgba(212,168,83,0.2)); }
+    .splash-logo .fallback { display:none; font-family:var(--font-serif); font-size:72px; font-weight:900; color:var(--white); letter-spacing:-3px; line-height:1; }
+    .splash-logo .fallback span { color:var(--gold); }
+    .splash-logo .fallback-sub { display:none; font-family:var(--font-sans); font-size:13px; font-weight:600; color:var(--cyan); letter-spacing:8px; text-transform:uppercase; margin-top:2px; }
+
+    .splash-line { position:relative; z-index:2; width:40px; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); margin:24px auto 0; animation: revealUp 1s 0.2s cubic-bezier(0.16,1,0.3,1) both; }
+    .splash-tag { position:relative; z-index:2; font-family:var(--font-sans); font-size:10px; font-weight:500; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-top:14px; animation: revealUp 1s 0.3s cubic-bezier(0.16,1,0.3,1) both; }
+    .splash-city { position:relative; z-index:2; font-family:var(--font-sans); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:rgba(255,255,255,0.15); margin-top:4px; animation: revealUp 1s 0.4s cubic-bezier(0.16,1,0.3,1) both; }
+
+    .splash-btn { position:relative; z-index:2; margin-top:56px; background:transparent; border:1px solid rgba(212,168,83,0.4); color:var(--gold); padding:15px 52px; border-radius:var(--r-full); font-family:var(--font-sans); font-size:12px; font-weight:600; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:all 0.35s cubic-bezier(0.4,0,0.2,1); animation: revealUp 1s 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+    .splash-btn:hover { background:var(--gold); color:var(--navy); box-shadow:var(--shadow-glow-gold); }
+    .splash-btn:active { transform:scale(0.95); }
+
+    .splash-ring { position:absolute; border-radius:50%; border:1px solid rgba(0,180,216,0.04); }
+    .splash-ring-1 { width:400px; height:400px; bottom:-200px; right:-200px; }
+    .splash-ring-2 { width:300px; height:300px; top:-150px; left:-150px; }
 
     /* ═══════════════════════════════════════
        ONBOARDING
     ═══════════════════════════════════════ */
-    #onboarding { background: var(--white); display: flex; flex-direction: column; }
-    .ob-slides { flex: 1; position: relative; overflow: hidden; }
-    .ob-slide {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      padding: 60px 32px 100px;
-      opacity: 0; transform: translateX(30px);
-      transition: all 0.45s ease;
-    }
-    .ob-slide.active { opacity: 1; transform: translateX(0); }
-    .ob-illus {
-      width: 180px; height: 180px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 36px; font-size: 72px;
-    }
-    .ob-slide:nth-child(1) .ob-illus { background: linear-gradient(135deg, #E8F4FD, #C5E8F8); }
-    .ob-slide:nth-child(2) .ob-illus { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
-    .ob-slide:nth-child(3) .ob-illus { background: linear-gradient(135deg, #E8F8F0, #C3EDD8); }
-    .ob-slide h2 { font-family: var(--font-display); font-size: 22px; color: var(--blue-deep); text-align: center; margin-bottom: 12px; }
-    .ob-slide p { font-size: 15px; color: var(--gray-500); text-align: center; line-height: 1.65; max-width: 280px; }
-    .ob-footer { padding: 0 24px 48px; }
-    .ob-dots { display: flex; gap: 8px; justify-content: center; margin-bottom: 20px; }
-    .ob-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gray-200); transition: all 0.3s ease; }
-    .ob-dot.active { width: 24px; border-radius: 4px; background: var(--blue-bright); }
-    .btn-primary {
-      width: 100%; padding: 16px; border: none; border-radius: var(--radius-lg);
-      font-family: var(--font-body); font-size: 16px; font-weight: 700;
-      cursor: pointer; background: var(--blue-bright); color: var(--white);
-      box-shadow: 0 4px 16px rgba(0,163,224,0.3); transition: all 0.2s;
-    }
-    .btn-primary:active { transform: scale(0.98); }
-    .ob-skip { text-align: center; margin-top: 14px; font-size: 14px; color: var(--gray-400); cursor: pointer; }
+    #onboarding { background:var(--cream); display:flex; flex-direction:column; }
+    .ob-slides { flex:1; position:relative; overflow:hidden; }
+    .ob-slide { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 36px 100px; opacity:0; transform:translateX(40px); transition:all 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .ob-slide.on { opacity:1; transform:translateX(0); }
+    .ob-icon { width:160px; height:160px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:40px; font-size:64px; position:relative; }
+    .ob-icon::after { content:''; position:absolute; inset:-8px; border-radius:50%; border:1px dashed var(--border); }
+    .ob-slide:nth-child(1) .ob-icon { background:linear-gradient(145deg, #E0F2FE, #BAE6FD); }
+    .ob-slide:nth-child(2) .ob-icon { background:linear-gradient(145deg, var(--sand), var(--gold-light)); }
+    .ob-slide:nth-child(3) .ob-icon { background:linear-gradient(145deg, #D1FAE5, #A7F3D0); }
+    .ob-slide h2 { font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--text-primary); text-align:center; margin-bottom:12px; line-height:1.2; }
+    .ob-slide p { font-size:15px; color:var(--text-secondary); text-align:center; line-height:1.7; max-width:280px; }
+    .ob-foot { padding:0 28px 48px; }
+    .ob-dots { display:flex; gap:8px; justify-content:center; margin-bottom:20px; }
+    .ob-dot { width:6px; height:6px; border-radius:50%; background:var(--text-faint); transition:all 0.3s; }
+    .ob-dot.on { width:28px; border-radius:3px; background:var(--gold); }
+    .btn-fill { width:100%; padding:17px; border:none; border-radius:var(--r-md); font-family:var(--font-sans); font-size:15px; font-weight:600; cursor:pointer; transition:all 0.25s; letter-spacing:0.3px; }
+    .btn-fill.gold { background:var(--gold); color:var(--white); box-shadow:var(--shadow-glow-gold); }
+    .btn-fill.gold:active { transform:scale(0.97); }
+    .btn-fill.dark { background:var(--navy); color:var(--white); box-shadow:var(--shadow-elevated); }
+    .btn-fill.dark:active { transform:scale(0.97); }
+    .btn-fill.cyan { background:var(--cyan); color:var(--white); box-shadow:var(--shadow-glow-cyan); }
+    .btn-fill.cyan:active { transform:scale(0.97); }
+    .ob-skip { text-align:center; margin-top:14px; font-size:13px; color:var(--text-muted); cursor:pointer; font-weight:500; }
 
     /* ═══════════════════════════════════════
        LOGIN
     ═══════════════════════════════════════ */
-    #login { background: var(--white); padding: 54px 24px 0; }
-    .login-logo-wrap { text-align: center; margin: 36px 0 32px; }
-    .login-logo-wrap img { height: 72px; }
-    .login-subtitle { font-size: 14px; color: var(--gray-400); margin-top: 8px; }
-    .login-form { display: flex; flex-direction: column; gap: 14px; }
-    .input-group label { display: block; font-size: 11px; font-weight: 700; color: var(--gray-500); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.6px; }
-    .input-group input {
-      width: 100%; padding: 14px 16px;
-      border: 2px solid var(--gray-200); border-radius: var(--radius-md);
-      font-family: var(--font-body); font-size: 15px; color: var(--gray-800);
-      outline: none; background: var(--gray-50); transition: border-color 0.2s;
-    }
-    .input-group input:focus { border-color: var(--blue-bright); background: var(--white); }
-    .btn-orange {
-      width: 100%; padding: 16px; border: none; border-radius: var(--radius-lg);
-      font-family: var(--font-body); font-size: 16px; font-weight: 700;
-      cursor: pointer; background: var(--orange); color: var(--white);
-      margin-top: 6px; box-shadow: 0 4px 16px rgba(245,166,35,0.3); transition: all 0.2s;
-    }
-    .btn-orange:active { transform: scale(0.98); }
-    .divider { display: flex; align-items: center; gap: 14px; margin: 22px 0; color: var(--gray-400); font-size: 13px; }
-    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--gray-200); }
-    .social-btns { display: flex; flex-direction: column; gap: 10px; }
-    .btn-social {
-      width: 100%; padding: 13px; border: 2px solid var(--gray-200); border-radius: var(--radius-md);
-      background: var(--white); font-family: var(--font-body); font-size: 14px; font-weight: 600;
-      color: var(--gray-700); cursor: pointer; display: flex; align-items: center;
-      justify-content: center; gap: 10px; transition: all 0.2s;
-    }
-    .btn-social:active { background: var(--gray-50); }
+    #login { background:var(--cream); padding:54px 28px 0; }
+    .login-top { text-align:center; margin:28px 0 36px; }
+    .login-top img { height:68px; }
+    .login-top .fallback { font-family:var(--font-serif); font-size:34px; font-weight:800; color:var(--text-primary); }
+    .login-top .fallback span { color:var(--gold); }
+    .login-sub { font-size:14px; color:var(--text-muted); margin-top:6px; font-weight:400; }
+    .field { margin-bottom:16px; }
+    .field label { display:block; font-size:11px; font-weight:600; color:var(--text-muted); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.8px; }
+    .field input { width:100%; padding:15px 18px; border:1.5px solid var(--border); border-radius:var(--r-md); font-family:var(--font-sans); font-size:15px; color:var(--text-primary); outline:none; background:var(--white); transition:all 0.2s; }
+    .field input:focus { border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-glow); }
+    .login-or { display:flex; align-items:center; gap:14px; margin:24px 0; color:var(--text-muted); font-size:12px; font-weight:500; }
+    .login-or::before,.login-or::after { content:''; flex:1; height:1px; background:var(--border); }
+    .btn-social { width:100%; padding:14px; border:1.5px solid var(--border); border-radius:var(--r-md); background:var(--white); font-family:var(--font-sans); font-size:14px; font-weight:600; color:var(--text-primary); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:10px; margin-bottom:10px; transition:all 0.2s; }
+    .btn-social:active { background:var(--surface); transform:scale(0.98); }
 
     /* ═══════════════════════════════════════
        HOME
     ═══════════════════════════════════════ */
-    #home { background: var(--gray-50); padding-bottom: 100px; }
-    .home-header {
-      background: linear-gradient(155deg, var(--blue-deep) 0%, var(--blue-primary) 100%);
-      padding: 54px 24px 24px;
-      border-radius: 0 0 28px 28px;
-      position: relative; overflow: hidden;
-    }
-    .home-header::after {
-      content: ''; position: absolute;
-      width: 240px; height: 240px; border-radius: 50%;
-      background: rgba(0,163,224,0.07); top: -80px; right: -60px;
-    }
-    .home-top {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 20px; position: relative; z-index: 2;
-    }
-    .home-header .status-bar { padding: 0; height: auto; position: relative; color: rgba(255,255,255,0.7); margin-bottom: 16px; }
-    .home-greeting { color: rgba(255,255,255,0.55); font-size: 13px; }
-    .home-username { color: var(--white); font-family: var(--font-display); font-size: 22px; margin-top: 2px; }
-    .home-avatar {
-      width: 46px; height: 46px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--orange-warm));
-      display: flex; align-items: center; justify-content: center;
-      color: var(--white); font-weight: 700; font-size: 16px;
-      border: 2px solid rgba(255,255,255,0.2);
-    }
-    .home-next-booking {
-      background: rgba(255,255,255,0.1); backdrop-filter: blur(12px);
-      border-radius: var(--radius-lg); padding: 16px;
-      border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2;
-    }
-    .home-next-booking .label { font-size: 10px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 10px; }
-    .booking-row { display: flex; justify-content: space-between; align-items: center; }
-    .booking-row h4 { color: var(--white); font-size: 15px; font-weight: 700; }
-    .booking-row p { color: rgba(255,255,255,0.55); font-size: 12px; margin-top: 3px; }
-    .booking-time { background: var(--orange); color: var(--white); padding: 8px 16px; border-radius: var(--radius-sm); font-weight: 700; font-size: 15px; }
-    .home-content { padding: 20px 24px 0; }
-    .quick-actions { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 24px; }
-    .qa {
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      cursor: pointer; transition: transform 0.15s;
-    }
-    .qa:active { transform: scale(0.9); }
-    .qa .icon-box {
-      width: 58px; height: 58px; border-radius: var(--radius-lg);
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: var(--shadow-sm); transition: transform 0.15s;
-    }
-    .qa [data-lucide] { width: 26px; height: 26px; stroke-width: 1.7; }
-    .qa span { font-size: 11px; font-weight: 600; color: var(--gray-600); }
-    .qa-reservar .icon-box { background: linear-gradient(135deg,#E8F4FD,#C5E8F8); }
-    .qa-reservar [data-lucide] { color: var(--blue-bright); }
-    .qa-ranking .icon-box { background: linear-gradient(135deg,#FFF3E0,#FFE0B2); }
-    .qa-ranking [data-lucide] { color: var(--orange); }
-    .qa-eventos .icon-box { background: linear-gradient(135deg,#E8F8F0,#C3EDD8); }
-    .qa-eventos [data-lucide] { color: var(--green); }
-    .qa-admin .icon-box { background: linear-gradient(135deg,#F3E8FD,#E4D0F5); }
-    .qa-admin [data-lucide] { color: #9B59B6; }
-    .section-hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-    .section-hd h3 { font-family: var(--font-display); font-size: 15px; color: var(--blue-deep); }
-    .section-hd a { font-size: 13px; color: var(--blue-bright); font-weight: 600; text-decoration: none; }
-    .event-banner {
-      background: linear-gradient(135deg, var(--orange) 0%, var(--orange-warm) 100%);
-      border-radius: var(--radius-lg); padding: 20px; margin-bottom: 24px;
-      position: relative; overflow: hidden; cursor: pointer; transition: transform 0.2s;
-    }
-    .event-banner:active { transform: scale(0.98); }
-    .event-banner::after { content: '🏐'; position: absolute; right: 14px; bottom: -10px; font-size: 72px; opacity: 0.15; }
-    .event-banner .tag {
-      background: rgba(255,255,255,0.22); color: var(--white);
-      padding: 4px 10px; border-radius: var(--radius-full);
-      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
-      display: inline-block; margin-bottom: 10px;
-    }
-    .event-banner h4 { color: var(--white); font-family: var(--font-display); font-size: 17px; margin-bottom: 4px; }
-    .event-banner p { color: rgba(255,255,255,0.75); font-size: 13px; }
-    .birthday-card {
-      background: var(--white); border-radius: var(--radius-lg); padding: 14px;
-      display: flex; align-items: center; gap: 14px;
-      box-shadow: var(--shadow-sm); margin-bottom: 10px; border: 1px solid var(--gray-100);
-    }
-    .birthday-emoji {
-      width: 46px; height: 46px; border-radius: var(--radius-md);
-      background: linear-gradient(135deg,#FFF3E0,#FFE0B2);
-      display: flex; align-items: center; justify-content: center; font-size: 22px;
-    }
-    .birthday-info h4 { font-size: 14px; font-weight: 700; color: var(--gray-800); }
-    .birthday-info p { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
+    #home { background:var(--surface); padding-bottom:100px; }
+    .home-hd { background:linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 50%, var(--navy-light) 100%); padding:54px 28px 28px; border-radius:0 0 32px 32px; position:relative; overflow:hidden; }
+    .home-hd::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 80% 20%, rgba(0,180,216,0.06) 0%, transparent 50%); }
+    .home-hd::after { content:''; position:absolute; inset:0; opacity:0.02; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size:128px; }
+    .home-sbar { padding:0; height:auto; position:relative; color:rgba(255,255,255,0.5); margin-bottom:18px; display:flex; justify-content:space-between; font-size:13px; font-weight:600; z-index:2; }
+    .home-sbar .sbar-icons [data-lucide] { color:rgba(255,255,255,0.5); }
+    .home-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; position:relative; z-index:2; }
+    .home-greet { color:rgba(255,255,255,0.45); font-size:13px; font-weight:400; }
+    .home-name { color:var(--white); font-family:var(--font-serif); font-size:24px; font-weight:700; margin-top:3px; letter-spacing:-0.3px; }
+    .home-av { width:48px; height:48px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-warm)); display:flex; align-items:center; justify-content:center; color:var(--white); font-weight:700; font-size:16px; border:2px solid rgba(255,255,255,0.15); box-shadow:0 4px 16px rgba(212,168,83,0.3); }
+
+    .next-card { background:var(--glass); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-radius:var(--r-lg); padding:18px; border:1px solid var(--glass-border); position:relative; z-index:2; }
+    .next-label { font-size:9px; color:rgba(255,255,255,0.35); text-transform:uppercase; letter-spacing:1.5px; font-weight:600; margin-bottom:12px; }
+    .next-row { display:flex; justify-content:space-between; align-items:center; }
+    .next-row h4 { color:var(--white); font-size:15px; font-weight:700; font-family:var(--font-serif); }
+    .next-row p { color:rgba(255,255,255,0.45); font-size:12px; margin-top:3px; }
+    .next-time { background:linear-gradient(135deg, var(--gold), var(--gold-warm)); color:var(--white); padding:8px 18px; border-radius:var(--r-sm); font-weight:700; font-size:14px; font-family:var(--font-serif); box-shadow:var(--shadow-glow-gold); }
+
+    .home-body { padding:22px 28px 0; }
+    .qas { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:28px; }
+    .qa { display:flex; flex-direction:column; align-items:center; gap:8px; cursor:pointer; transition:transform 0.15s; }
+    .qa:active { transform:scale(0.88); }
+    .qa .qbox { width:60px; height:60px; border-radius:var(--r-lg); display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-card); border:1px solid var(--border-light); background:var(--white); transition:all 0.2s; }
+    .qa [data-lucide] { width:24px; height:24px; stroke-width:1.6; }
+    .qa span { font-size:10px; font-weight:600; color:var(--text-secondary); letter-spacing:0.2px; }
+    .qa-reservar [data-lucide] { color:var(--cyan); }
+    .qa-ranking [data-lucide] { color:var(--gold); }
+    .qa-eventos [data-lucide] { color:var(--green); }
+    .qa-admin [data-lucide] { color:var(--purple); }
+
+    .sec-hd { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+    .sec-hd h3 { font-family:var(--font-serif); font-size:18px; font-weight:700; color:var(--text-primary); }
+    .sec-hd a { font-size:12px; color:var(--gold); font-weight:600; text-decoration:none; letter-spacing:0.3px; }
+
+    .promo-card { background:linear-gradient(135deg, var(--gold) 0%, #C4912F 100%); border-radius:var(--r-xl); padding:22px; margin-bottom:28px; position:relative; overflow:hidden; cursor:pointer; transition:transform 0.2s; }
+    .promo-card:active { transform:scale(0.98); }
+    .promo-card::before { content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.15) 100%); }
+    .promo-card::after { content:'🏐'; position:absolute; right:16px; bottom:-14px; font-size:80px; opacity:0.12; }
+    .promo-card .pill { position:relative; z-index:1; background:rgba(255,255,255,0.2); color:var(--white); padding:4px 10px; border-radius:var(--r-full); font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.6px; display:inline-block; margin-bottom:10px; backdrop-filter:blur(4px); }
+    .promo-card h4 { position:relative; z-index:1; color:var(--white); font-family:var(--font-serif); font-size:20px; font-weight:700; margin-bottom:4px; }
+    .promo-card p { position:relative; z-index:1; color:rgba(255,255,255,0.75); font-size:13px; }
+
+    .bday-card { background:var(--white); border-radius:var(--r-lg); padding:14px 16px; display:flex; align-items:center; gap:14px; box-shadow:var(--shadow-subtle); margin-bottom:10px; border:1px solid var(--border-light); }
+    .bday-icon { width:46px; height:46px; border-radius:var(--r-md); background:linear-gradient(135deg, var(--sand), var(--gold-light)); display:flex; align-items:center; justify-content:center; font-size:20px; }
+    .bday-info h4 { font-size:14px; font-weight:700; color:var(--text-primary); }
+    .bday-info p { font-size:12px; color:var(--text-muted); margin-top:2px; }
 
     /* ═══════════════════════════════════════
-       QUADRAS GRID
+       QUADRAS
     ═══════════════════════════════════════ */
-    #quadras { background: var(--white); padding-bottom: 100px; }
-    .quadras-header {
-      padding: 54px 24px 14px; background: var(--white);
-      position: sticky; top: 0; z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .quadras-title { font-family: var(--font-display); font-size: 20px; color: var(--blue-deep); margin-bottom: 14px; }
-    .date-scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
-    .date-scroll::-webkit-scrollbar { display: none; }
-    .date-chip {
-      flex-shrink: 0; padding: 8px 16px; border-radius: var(--radius-full);
-      border: 2px solid var(--gray-200); background: var(--white);
-      font-size: 13px; font-weight: 600; color: var(--gray-500); cursor: pointer; transition: all 0.2s; white-space: nowrap;
-    }
-    .date-chip.active { background: var(--blue-deep); color: var(--white); border-color: var(--blue-deep); }
-    .grid-legend { display: flex; gap: 16px; padding: 12px 24px; flex-wrap: wrap; }
-    .leg { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--gray-500); }
-    .leg-dot { width: 10px; height: 10px; border-radius: 3px; }
-    .leg-dot.free { background: var(--green); }
-    .leg-dot.occ  { background: var(--red); }
-    .leg-dot.cls  { background: #7C4DFF; }
-    .leg-dot.mine { background: var(--blue-bright); }
-    .grid-wrap { overflow-x: auto; padding: 0 12px 12px; }
-    .grid-wrap::-webkit-scrollbar { display: none; }
-    .courts-grid { display: grid; grid-template-columns: 52px repeat(6,70px); width: max-content; }
-    .gh-cell {
-      padding: 8px 4px; text-align: center; font-size: 11px; font-weight: 700;
-      color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.5px;
-    }
-    .g-time {
-      padding: 6px 8px 6px 0; font-size: 11px; font-weight: 600; color: var(--gray-400);
-      display: flex; align-items: center; justify-content: flex-end;
-    }
-    .g-cell {
-      width: 66px; height: 44px; margin: 2px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 700; cursor: pointer; transition: transform 0.12s;
-    }
-    .g-cell:active { transform: scale(0.9); }
-    .g-cell.free  { background: var(--green-light); color: var(--green); border: 1px solid rgba(46,204,113,0.2); }
-    .g-cell.occ   { background: var(--red-light); color: var(--red); border: 1px solid rgba(231,76,60,0.15); }
-    .g-cell.cls   { background: #EDE7F6; color: #7C4DFF; border: 1px solid rgba(124,77,255,0.15); }
-    .g-cell.mine  { background: var(--blue-light); color: var(--blue-bright); border: 2px solid var(--blue-bright); }
+    #quadras { background:var(--white); padding-bottom:100px; }
+    .q-hd { padding:54px 28px 14px; background:var(--white); position:sticky; top:0; z-index:100; }
+    .q-hd::after { content:''; position:absolute; bottom:0; left:0; right:0; height:1px; background:linear-gradient(90deg, transparent, var(--border), transparent); }
+    .q-title { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); margin-bottom:14px; }
+    .d-scroll { display:flex; gap:8px; overflow-x:auto; padding-bottom:4px; }
+    .d-scroll::-webkit-scrollbar { display:none; }
+    .d-chip { flex-shrink:0; padding:8px 18px; border-radius:var(--r-full); border:1.5px solid var(--border); background:var(--white); font-size:13px; font-weight:600; color:var(--text-muted); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
+    .d-chip.on { background:var(--navy); color:var(--white); border-color:var(--navy); box-shadow:var(--shadow-elevated); }
+    .legend { display:flex; gap:16px; padding:14px 28px; flex-wrap:wrap; }
+    .leg { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted); font-weight:500; }
+    .ldot { width:10px; height:10px; border-radius:3px; }
+    .ldot.free { background:var(--green); }
+    .ldot.occ  { background:var(--red); }
+    .ldot.cls  { background:var(--purple); }
+    .ldot.mine { background:var(--cyan); }
+    .g-wrap { overflow-x:auto; padding:0 14px 14px; }
+    .g-wrap::-webkit-scrollbar { display:none; }
+    .g-grid { display:grid; grid-template-columns:52px repeat(6,70px); width:max-content; }
+    .gh { padding:8px 4px; text-align:center; font-size:10px; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.8px; }
+    .gt { padding:6px 8px 6px 0; font-size:11px; font-weight:600; color:var(--text-faint); display:flex; align-items:center; justify-content:flex-end; }
+    .gc { width:66px; height:44px; margin:2px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; cursor:pointer; transition:all 0.15s; }
+    .gc:active { transform:scale(0.88); }
+    .gc.free  { background:var(--green-soft); color:var(--green); border:1px solid rgba(52,211,153,0.15); }
+    .gc.occ   { background:var(--red-soft); color:var(--red); border:1px solid rgba(248,113,113,0.1); }
+    .gc.cls   { background:var(--purple-soft); color:var(--purple); border:1px solid rgba(167,139,250,0.1); }
+    .gc.mine  { background:rgba(0,180,216,0.1); color:var(--cyan); border:2px solid var(--cyan); }
 
     /* ═══════════════════════════════════════
-       BOOKING DETAIL
+       BOOKING DETAIL + CONFIRM
     ═══════════════════════════════════════ */
-    #booking-detail { background: var(--white); padding: 54px 24px 40px; }
-    .booking-hero {
-      background: linear-gradient(155deg, var(--blue-deep), var(--blue-primary));
-      border-radius: var(--radius-xl); padding: 24px; margin-bottom: 24px;
-      position: relative; overflow: hidden;
-    }
-    .booking-hero::before { content: ''; position: absolute; width: 160px; height: 160px; border-radius: 50%; background: rgba(0,163,224,0.1); top: -50px; right: -30px; }
-    .booking-hero h3 { color: var(--white); font-family: var(--font-display); font-size: 20px; margin-bottom: 16px; }
-    .bm-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.65); font-size: 14px; margin-bottom: 8px; }
-    .bm-item [data-lucide] { width: 16px; height: 16px; flex-shrink: 0; }
-    .invite-section h4 { font-family: var(--font-display); font-size: 13px; color: var(--blue-deep); margin-bottom: 10px; }
-    .invite-row { display: flex; gap: 10px; margin-bottom: 12px; }
-    .invite-input {
-      flex: 1; padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: var(--radius-md);
-      font-family: var(--font-body); font-size: 14px; outline: none; background: var(--gray-50);
-    }
-    .invite-input:focus { border-color: var(--blue-bright); }
-    .invite-add {
-      padding: 12px 18px; background: var(--blue-bright); color: var(--white);
-      border: none; border-radius: var(--radius-md); font-weight: 700; font-size: 18px; cursor: pointer;
-    }
-    .invited-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
-    .chip {
-      display: flex; align-items: center; gap: 6px;
-      background: var(--blue-light); color: var(--blue-primary);
-      padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;
-    }
-    .btn-confirm {
-      width: 100%; padding: 18px; border: none; border-radius: var(--radius-lg);
-      font-family: var(--font-body); font-size: 16px; font-weight: 700;
-      cursor: pointer; background: var(--orange); color: var(--white);
-      box-shadow: 0 4px 16px rgba(245,166,35,0.3); transition: all 0.2s;
-    }
-    .btn-confirm:active { transform: scale(0.98); }
+    #booking-detail { background:var(--cream); padding:54px 28px 40px; }
+    .bk-hero { background:linear-gradient(160deg, var(--navy), var(--navy-light)); border-radius:var(--r-xl); padding:24px; margin-bottom:24px; position:relative; overflow:hidden; }
+    .bk-hero::before { content:''; position:absolute; inset:0; opacity:0.02; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .bk-hero h3 { color:var(--white); font-family:var(--font-serif); font-size:22px; font-weight:700; margin-bottom:16px; }
+    .bk-meta { display:flex; align-items:center; gap:10px; color:rgba(255,255,255,0.55); font-size:14px; margin-bottom:8px; }
+    .bk-meta [data-lucide] { width:16px; height:16px; color:var(--gold); flex-shrink:0; }
+    .inv-sec h4 { font-family:var(--font-serif); font-size:14px; color:var(--text-primary); margin-bottom:12px; }
+    .inv-row { display:flex; gap:10px; margin-bottom:12px; }
+    .inv-input { flex:1; padding:13px 18px; border:1.5px solid var(--border); border-radius:var(--r-md); font-family:var(--font-sans); font-size:14px; outline:none; background:var(--white); }
+    .inv-input:focus { border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-glow); }
+    .inv-add { padding:13px 18px; background:var(--cyan); color:var(--white); border:none; border-radius:var(--r-md); font-weight:700; font-size:18px; cursor:pointer; }
+    .chips { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+    .chip { display:flex; align-items:center; gap:6px; background:rgba(0,180,216,0.08); color:var(--blue); padding:7px 14px; border-radius:var(--r-full); font-size:13px; font-weight:600; border:1px solid rgba(0,180,216,0.15); }
 
-    /* ═══════════════════════════════════════
-       BOOKING CONFIRM
-    ═══════════════════════════════════════ */
-    #booking-confirm {
-      background: var(--white); display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 54px 24px 40px; text-align: center;
-    }
-    .confirm-ring {
-      width: 88px; height: 88px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--green), #27AE60);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 24px;
-      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
-    }
-    .confirm-ring [data-lucide] { width: 44px; height: 44px; color: white; stroke-width: 2.5; }
-    @keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-    .confirm-title { font-family: var(--font-display); font-size: 22px; color: var(--blue-deep); margin-bottom: 8px; }
-    .confirm-sub { font-size: 14px; color: var(--gray-400); margin-bottom: 32px; }
-    .qr-box {
-      width: 180px; height: 180px; background: var(--gray-50); border-radius: var(--radius-lg);
-      border: 2px dashed var(--gray-200); display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 10px; margin-bottom: 10px;
-    }
-    .qr-box [data-lucide] { width: 80px; height: 80px; color: var(--gray-300); }
-    .qr-label { font-size: 12px; color: var(--gray-400); margin-bottom: 32px; }
-    .btn-home {
-      padding: 16px 48px; background: var(--blue-deep); color: var(--white);
-      border: none; border-radius: var(--radius-lg);
-      font-family: var(--font-body); font-size: 16px; font-weight: 700; cursor: pointer;
-    }
-    .btn-home:active { transform: scale(0.97); }
+    #booking-confirm { background:var(--cream); display:flex; flex-direction:column; align-items:center; justify-content:center; padding:54px 28px 40px; text-align:center; }
+    .confirm-check { width:88px; height:88px; border-radius:50%; background:linear-gradient(135deg, var(--green), #10B981); display:flex; align-items:center; justify-content:center; margin-bottom:28px; animation:popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both; box-shadow:0 8px 32px rgba(52,211,153,0.3); }
+    .confirm-check [data-lucide] { width:44px; height:44px; color:white; stroke-width:2.5; }
+    @keyframes popIn { from { transform:scale(0); opacity:0; } to { transform:scale(1); opacity:1; } }
+    .confirm-h { font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--text-primary); margin-bottom:8px; }
+    .confirm-p { font-size:14px; color:var(--text-muted); margin-bottom:32px; }
+    .qr-box { width:180px; height:180px; background:var(--white); border-radius:var(--r-lg); border:2px dashed var(--border); display:flex; align-items:center; justify-content:center; margin-bottom:10px; box-shadow:var(--shadow-subtle); }
+    .qr-box [data-lucide] { width:80px; height:80px; color:var(--text-faint); }
+    .qr-txt { font-size:12px; color:var(--text-muted); margin-bottom:32px; }
 
     /* ═══════════════════════════════════════
        ADMIN
     ═══════════════════════════════════════ */
-    #admin { background: var(--gray-50); padding-bottom: 100px; }
-    .admin-hd { padding: 54px 24px 18px; background: var(--white); }
-    .admin-hd-row { display: flex; justify-content: space-between; align-items: center; }
-    .admin-hd h2 { font-family: var(--font-display); font-size: 20px; color: var(--blue-deep); }
-    .badge-gestor { background: var(--orange-light); color: var(--orange); padding: 4px 10px; border-radius: var(--radius-full); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
-    .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 20px 24px; }
-    .metric-card {
-      background: var(--white); border-radius: var(--radius-lg); padding: 16px;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
-    }
-    .metric-card .mi { margin-bottom: 10px; }
-    .metric-card .mi [data-lucide] { width: 24px; height: 24px; }
-    .metric-card .mv { font-family: var(--font-display); font-size: 22px; color: var(--blue-deep); }
-    .metric-card .ml { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
-    .metric-change { font-size: 11px; font-weight: 700; margin-top: 6px; display: inline-block; padding: 2px 8px; border-radius: var(--radius-full); }
-    .metric-change.up   { background: var(--green-light); color: var(--green); }
-    .metric-change.down { background: var(--red-light); color: var(--red); }
-    .admin-section { padding: 0 24px; margin-bottom: 20px; }
-    .occ-card { background: var(--white); border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100); }
-    .occ-card h4 { font-size: 13px; font-weight: 700; color: var(--gray-700); margin-bottom: 12px; }
-    .occ-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-    .occ-label { font-size: 12px; color: var(--gray-500); width: 54px; flex-shrink: 0; }
-    .occ-track { flex: 1; height: 8px; background: var(--gray-100); border-radius: 4px; overflow: hidden; }
-    .occ-fill { height: 100%; border-radius: 4px; }
-    .occ-pct { font-size: 11px; font-weight: 700; color: var(--gray-600); width: 32px; text-align: right; }
-    .alert-list { display: flex; flex-direction: column; gap: 10px; }
-    .alert-card {
-      background: var(--white); border-radius: var(--radius-md); padding: 14px 16px;
-      display: flex; align-items: center; gap: 12px;
-      border: 1px solid var(--gray-100); cursor: pointer; transition: all 0.2s;
-    }
-    .alert-card:active { background: var(--gray-50); }
-    .alert-icon {
-      width: 40px; height: 40px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-    }
-    .alert-icon [data-lucide] { width: 20px; height: 20px; }
-    .alert-info { flex: 1; }
-    .alert-info h5 { font-size: 13px; font-weight: 700; color: var(--gray-800); }
-    .alert-info p  { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
-    .alert-badge {
-      width: 24px; height: 24px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 11px; font-weight: 700; color: var(--white);
-    }
+    #admin { background:var(--surface); padding-bottom:100px; }
+    .adm-hd { padding:54px 28px 18px; background:var(--white); border-bottom:1px solid var(--border-light); }
+    .adm-hd-row { display:flex; justify-content:space-between; align-items:center; }
+    .adm-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .badge-g { background:linear-gradient(135deg, var(--gold-glow), rgba(212,168,83,0.08)); color:var(--gold); padding:4px 12px; border-radius:var(--r-full); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; border:1px solid rgba(212,168,83,0.2); }
+    .m-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; padding:20px 28px; }
+    .m-card { background:var(--white); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .m-card .mi { margin-bottom:10px; }
+    .m-card .mi [data-lucide] { width:22px; height:22px; }
+    .m-card .mv { font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--text-primary); }
+    .m-card .ml { font-size:11px; color:var(--text-muted); margin-top:2px; font-weight:500; }
+    .m-chg { font-size:10px; font-weight:700; margin-top:8px; display:inline-block; padding:2px 8px; border-radius:var(--r-full); }
+    .m-chg.up   { background:var(--green-soft); color:var(--green); }
+    .m-chg.down { background:var(--red-soft); color:var(--red); }
+    .adm-sec { padding:0 28px; margin-bottom:20px; }
+    .occ-card { background:var(--white); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .occ-card h4 { font-size:12px; font-weight:700; color:var(--text-secondary); margin-bottom:14px; text-transform:uppercase; letter-spacing:0.5px; }
+    .occ-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+    .occ-lbl { font-size:12px; color:var(--text-muted); width:54px; flex-shrink:0; font-weight:500; }
+    .occ-trk { flex:1; height:6px; background:var(--border-light); border-radius:3px; overflow:hidden; }
+    .occ-fill { height:100%; border-radius:3px; }
+    .occ-pct { font-size:11px; font-weight:700; color:var(--text-secondary); width:32px; text-align:right; }
+    .alert-list { display:flex; flex-direction:column; gap:10px; }
+    .alert-card { background:var(--white); border-radius:var(--r-md); padding:14px 16px; display:flex; align-items:center; gap:12px; border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; }
+    .alert-card:active { background:var(--surface); transform:scale(0.98); }
+    .alert-ic { width:40px; height:40px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .alert-ic [data-lucide] { width:18px; height:18px; }
+    .alert-txt { flex:1; }
+    .alert-txt h5 { font-size:13px; font-weight:700; color:var(--text-primary); }
+    .alert-txt p  { font-size:12px; color:var(--text-muted); margin-top:2px; }
+    .alert-n { min-width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:var(--white); }
 
     /* ═══════════════════════════════════════
-       ALUNOS LIST
+       ALUNOS
     ═══════════════════════════════════════ */
-    #alunos { background: var(--gray-50); padding-bottom: 100px; }
-    .alunos-hd { padding: 54px 24px 14px; background: var(--white); }
-    .alunos-hd-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-    .alunos-hd h2 { font-family: var(--font-display); font-size: 20px; color: var(--blue-deep); }
-    .search-bar {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--gray-50); border: 2px solid var(--gray-200);
-      border-radius: var(--radius-full); padding: 10px 16px;
-    }
-    .search-bar [data-lucide] { width: 16px; height: 16px; color: var(--gray-400); flex-shrink: 0; }
-    .search-bar input { border: none; outline: none; background: none; font-family: var(--font-body); font-size: 14px; color: var(--gray-800); flex: 1; }
-    .filter-row { display: flex; gap: 8px; padding: 10px 24px; overflow-x: auto; }
-    .filter-row::-webkit-scrollbar { display: none; }
-    .fc {
-      flex-shrink: 0; padding: 6px 14px; border-radius: var(--radius-full);
-      border: 1.5px solid var(--gray-200); font-size: 12px; font-weight: 600;
-      color: var(--gray-500); background: var(--white); cursor: pointer; transition: all 0.2s;
-    }
-    .fc.active { background: var(--blue-deep); color: var(--white); border-color: var(--blue-deep); }
-    .alunos-list { padding: 8px 24px; }
-    .aluno-card {
-      background: var(--white); border-radius: var(--radius-lg); padding: 14px;
-      display: flex; align-items: center; gap: 14px; margin-bottom: 10px;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
-      cursor: pointer; transition: all 0.2s;
-    }
-    .aluno-card:active { transform: scale(0.98); background: var(--gray-50); }
-    .aluno-av {
-      width: 48px; height: 48px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px; font-weight: 700; color: var(--white); flex-shrink: 0;
-    }
-    .aluno-info { flex: 1; }
-    .aluno-info h4 { font-size: 14px; font-weight: 700; color: var(--gray-800); }
-    .aluno-info p  { font-size: 12px; color: var(--gray-400); margin-top: 2px; }
-    .status-pill { padding: 4px 10px; border-radius: var(--radius-full); font-size: 11px; font-weight: 700; }
-    .status-pill.ativo  { background: var(--green-light); color: var(--green); }
-    .status-pill.vencido { background: var(--red-light); color: var(--red); }
-    .status-pill.trial  { background: var(--orange-light); color: var(--orange); }
+    #alunos { background:var(--surface); padding-bottom:100px; }
+    .al-hd { padding:54px 28px 14px; background:var(--white); }
+    .al-hd-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+    .al-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .al-count { font-size:12px; color:var(--text-muted); font-weight:500; }
+    .search { display:flex; align-items:center; gap:8px; background:var(--surface); border:1.5px solid var(--border); border-radius:var(--r-full); padding:11px 18px; }
+    .search [data-lucide] { width:16px; height:16px; color:var(--text-muted); flex-shrink:0; }
+    .search input { border:none; outline:none; background:none; font-family:var(--font-sans); font-size:14px; color:var(--text-primary); flex:1; }
+    .f-row { display:flex; gap:8px; padding:12px 28px; overflow-x:auto; }
+    .f-row::-webkit-scrollbar { display:none; }
+    .fc { flex-shrink:0; padding:6px 14px; border-radius:var(--r-full); border:1.5px solid var(--border); font-size:12px; font-weight:600; color:var(--text-muted); background:var(--white); cursor:pointer; transition:all 0.2s; }
+    .fc.on { background:var(--navy); color:var(--white); border-color:var(--navy); }
+    .al-list { padding:8px 28px; }
+    .al-card { background:var(--white); border-radius:var(--r-lg); padding:14px 16px; display:flex; align-items:center; gap:14px; margin-bottom:10px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); cursor:pointer; transition:all 0.2s; }
+    .al-card:active { transform:scale(0.98); background:var(--surface); }
+    .al-av { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:16px; font-weight:700; color:var(--white); flex-shrink:0; }
+    .al-info { flex:1; }
+    .al-info h4 { font-size:14px; font-weight:700; color:var(--text-primary); }
+    .al-info p { font-size:12px; color:var(--text-muted); margin-top:2px; }
+    .st-pill { padding:4px 10px; border-radius:var(--r-full); font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.3px; }
+    .st-pill.ativo  { background:var(--green-soft); color:var(--green); }
+    .st-pill.vencido{ background:var(--red-soft); color:var(--red); }
+    .st-pill.trial  { background:var(--gold-glow); color:var(--gold); }
 
     /* ═══════════════════════════════════════
        ALUNO DETAIL
     ═══════════════════════════════════════ */
-    #aluno-detail { background: var(--gray-50); padding-bottom: 40px; }
-    .aluno-detail-hd {
-      background: linear-gradient(155deg, var(--blue-deep), var(--blue-primary));
-      padding: 54px 24px 28px; text-align: center;
-      border-radius: 0 0 28px 28px; position: relative; overflow: hidden;
-    }
-    .aluno-detail-hd .back-btn { color: rgba(255,255,255,0.6); position: absolute; top: 54px; left: 24px; margin: 0; }
-    .aluno-detail-hd .back-btn [data-lucide] { width: 18px; height: 18px; }
-    .detail-av {
-      width: 84px; height: 84px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--orange-warm));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 30px; font-weight: 700; color: var(--white);
-      margin: 20px auto 12px; border: 3px solid rgba(255,255,255,0.2);
-    }
-    .detail-name { font-family: var(--font-display); font-size: 22px; color: var(--white); }
-    .detail-level { color: var(--orange); font-size: 13px; font-weight: 600; margin-top: 4px; }
-    .detail-tags { display: flex; gap: 8px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
-    .detail-tag { padding: 4px 12px; border-radius: var(--radius-full); font-size: 11px; font-weight: 700; background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); }
-    .stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; padding: 20px 24px; }
-    .stat-box { background: var(--white); border-radius: var(--radius-md); padding: 14px; text-align: center; box-shadow: var(--shadow-sm); }
-    .stat-box .sn { font-family: var(--font-display); font-size: 22px; color: var(--blue-deep); }
-    .stat-box .sl { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
-    .info-section { padding: 0 24px; margin-bottom: 16px; }
-    .info-section h4 { font-family: var(--font-display); font-size: 13px; color: var(--blue-deep); margin-bottom: 10px; }
-    .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--gray-100); font-size: 14px; }
-    .info-row .lbl { color: var(--gray-400); }
-    .info-row .val { color: var(--gray-800); font-weight: 600; }
+    #aluno-detail { background:var(--surface); padding-bottom:40px; }
+    .ad-hd { background:linear-gradient(160deg, var(--navy), var(--navy-light)); padding:54px 28px 28px; text-align:center; border-radius:0 0 32px 32px; position:relative; overflow:hidden; }
+    .ad-hd::after { content:''; position:absolute; inset:0; opacity:0.02; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .ad-hd .back { color:rgba(255,255,255,0.5); position:absolute; top:54px; left:28px; margin:0; z-index:2; }
+    .ad-av { width:84px; height:84px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-warm)); display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:700; color:var(--white); margin:20px auto 14px; border:3px solid rgba(255,255,255,0.15); box-shadow:var(--shadow-glow-gold); position:relative; z-index:2; }
+    .ad-name { font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--white); position:relative; z-index:2; }
+    .ad-level { color:var(--gold); font-size:12px; font-weight:600; margin-top:4px; position:relative; z-index:2; }
+    .ad-tags { display:flex; gap:8px; justify-content:center; margin-top:12px; flex-wrap:wrap; position:relative; z-index:2; }
+    .ad-tag { padding:4px 12px; border-radius:var(--r-full); font-size:10px; font-weight:700; background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); border:1px solid rgba(255,255,255,0.08); }
+    .stats-row { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:20px 28px; }
+    .stat-box { background:var(--white); border-radius:var(--r-md); padding:16px; text-align:center; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .stat-box .sn { font-family:var(--font-serif); font-size:24px; font-weight:700; color:var(--text-primary); }
+    .stat-box .sl { font-size:10px; color:var(--text-muted); margin-top:2px; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+    .info-sec { padding:0 28px; margin-bottom:18px; }
+    .info-sec h4 { font-family:var(--font-serif); font-size:14px; color:var(--text-primary); margin-bottom:12px; }
+    .info-r { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--border-light); font-size:14px; }
+    .info-r .lbl { color:var(--text-muted); }
+    .info-r .val { color:var(--text-primary); font-weight:600; }
+    .fav-chip { background:rgba(0,180,216,0.08); color:var(--blue); padding:7px 16px; border-radius:var(--r-full); font-size:13px; font-weight:600; border:1px solid rgba(0,180,216,0.12); }
 
     /* ═══════════════════════════════════════
        EVENTOS
     ═══════════════════════════════════════ */
-    #eventos { background: var(--gray-50); padding-bottom: 100px; }
-    .eventos-hd { padding: 54px 24px 16px; background: var(--white); }
-    .eventos-hd h2 { font-family: var(--font-display); font-size: 20px; color: var(--blue-deep); }
-    .ev-card {
-      background: var(--white); border-radius: var(--radius-lg); margin: 12px 24px;
-      overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
-      cursor: pointer; transition: transform 0.2s;
-    }
-    .ev-card:active { transform: scale(0.98); }
-    .ev-banner { height: 110px; display: flex; align-items: center; justify-content: center; font-size: 52px; }
-    .ev-body { padding: 16px; }
-    .ev-date { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--blue-bright); font-weight: 700; margin-bottom: 6px; }
-    .ev-date [data-lucide] { width: 14px; height: 14px; }
-    .ev-body h4 { font-family: var(--font-display); font-size: 16px; color: var(--blue-deep); margin-bottom: 4px; }
-    .ev-body p { font-size: 13px; color: var(--gray-500); line-height: 1.5; }
-    .ev-footer { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-top: 1px solid var(--gray-100); }
-    .ev-spots { font-size: 12px; color: var(--gray-400); }
-    .ev-spots strong { color: var(--orange); }
-    .btn-inscricao { padding: 8px 20px; background: var(--blue-bright); color: var(--white); border: none; border-radius: var(--radius-full); font-family: var(--font-body); font-size: 12px; font-weight: 700; cursor: pointer; }
+    #eventos { background:var(--surface); padding-bottom:100px; }
+    .ev-hd { padding:54px 28px 16px; background:var(--white); border-bottom:1px solid var(--border-light); }
+    .ev-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .ev-card { background:var(--white); border-radius:var(--r-xl); margin:14px 28px; overflow:hidden; box-shadow:var(--shadow-card); border:1px solid var(--border-light); cursor:pointer; transition:transform 0.2s; }
+    .ev-card:active { transform:scale(0.98); }
+    .ev-banner { height:110px; display:flex; align-items:center; justify-content:center; font-size:52px; }
+    .ev-body { padding:18px 20px; }
+    .ev-date { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--gold); font-weight:700; margin-bottom:6px; letter-spacing:0.5px; }
+    .ev-date [data-lucide] { width:13px; height:13px; }
+    .ev-body h4 { font-family:var(--font-serif); font-size:17px; font-weight:700; color:var(--text-primary); margin-bottom:6px; }
+    .ev-body p { font-size:13px; color:var(--text-secondary); line-height:1.55; }
+    .ev-foot { display:flex; justify-content:space-between; align-items:center; padding:14px 20px; border-top:1px solid var(--border-light); }
+    .ev-spots { font-size:12px; color:var(--text-muted); }
+    .ev-spots strong { color:var(--gold); }
+    .btn-sm { padding:8px 22px; border:none; border-radius:var(--r-full); font-family:var(--font-sans); font-size:11px; font-weight:700; cursor:pointer; letter-spacing:0.3px; transition:all 0.2s; }
+    .btn-sm.gold { background:var(--gold); color:var(--white); box-shadow:var(--shadow-glow-gold); }
 
     /* ═══════════════════════════════════════
        FEED
     ═══════════════════════════════════════ */
-    #feed { background: var(--gray-50); padding-bottom: 100px; }
-    .feed-hd { padding: 54px 24px 16px; background: var(--white); }
-    .feed-hd h2 { font-family: var(--font-display); font-size: 20px; color: var(--blue-deep); }
-    .feed-item { background: var(--white); margin: 12px 24px; border-radius: var(--radius-lg); padding: 16px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100); }
-    .feed-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-    .feed-av { width: 34px; height: 34px; border-radius: 50%; background: var(--blue-deep); display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 11px; font-weight: 700; }
-    .feed-meta h5 { font-size: 13px; font-weight: 700; color: var(--gray-800); }
-    .feed-meta span { font-size: 11px; color: var(--gray-400); }
-    .feed-tag { margin-left: auto; padding: 3px 8px; border-radius: var(--radius-full); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; }
-    .tag-promo    { background: var(--orange-light); color: var(--orange); }
-    .tag-aviso    { background: var(--blue-light);   color: var(--blue-bright); }
-    .tag-result   { background: var(--green-light);  color: var(--green); }
-    .tag-niver    { background: #FFF3E0; color: #FF8C00; }
-    .feed-body { font-size: 14px; color: var(--gray-600); line-height: 1.55; }
+    #feed { background:var(--surface); padding-bottom:100px; }
+    .feed-hd { padding:54px 28px 16px; background:var(--white); border-bottom:1px solid var(--border-light); }
+    .feed-hd h2 { font-family:var(--font-serif); font-size:22px; font-weight:700; color:var(--text-primary); }
+    .feed-item { background:var(--white); margin:12px 28px; border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .feed-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+    .feed-av { width:34px; height:34px; border-radius:50%; background:var(--navy); display:flex; align-items:center; justify-content:center; color:var(--white); font-size:10px; font-weight:700; }
+    .feed-meta h5 { font-size:13px; font-weight:700; color:var(--text-primary); }
+    .feed-meta span { font-size:11px; color:var(--text-muted); }
+    .feed-tag { margin-left:auto; padding:3px 8px; border-radius:var(--r-full); font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:0.4px; }
+    .tag-promo { background:var(--gold-glow); color:var(--gold); border:1px solid rgba(212,168,83,0.15); }
+    .tag-aviso { background:rgba(0,180,216,0.08); color:var(--cyan); border:1px solid rgba(0,180,216,0.1); }
+    .tag-result{ background:var(--green-soft); color:var(--green); border:1px solid rgba(52,211,153,0.1); }
+    .tag-niver { background:rgba(212,168,83,0.08); color:#C4912F; border:1px solid rgba(212,168,83,0.1); }
+    .feed-body { font-size:14px; color:var(--text-secondary); line-height:1.6; }
 
     /* ═══════════════════════════════════════
        PERFIL
     ═══════════════════════════════════════ */
-    #perfil { background: var(--gray-50); padding-bottom: 100px; }
-    .perfil-hd {
-      background: linear-gradient(155deg, var(--blue-deep), var(--blue-primary));
-      padding: 54px 24px 28px; text-align: center;
-      border-radius: 0 0 28px 28px; position: relative; overflow: hidden;
-    }
-    .perfil-hd::after { content: ''; position: absolute; width: 200px; height: 200px; border-radius: 50%; background: rgba(245,166,35,0.07); bottom: -80px; left: -40px; }
-    .perfil-av {
-      width: 90px; height: 90px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--orange), var(--orange-warm));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 36px; font-weight: 700; color: var(--white);
-      margin: 0 auto 12px; border: 4px solid rgba(255,255,255,0.2); position: relative; z-index: 2;
-    }
-    .perfil-name { font-family: var(--font-display); font-size: 24px; color: var(--white); position: relative; z-index: 2; }
-    .perfil-lvl {
-      display: inline-flex; align-items: center; gap: 6px;
-      background: rgba(245,166,35,0.2); color: var(--orange);
-      padding: 5px 14px; border-radius: var(--radius-full);
-      font-size: 12px; font-weight: 700; margin-top: 8px; position: relative; z-index: 2;
-    }
-    .perfil-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; padding: 20px 24px; }
-    .ps { background: var(--white); border-radius: var(--radius-md); padding: 14px; text-align: center; box-shadow: var(--shadow-sm); }
-    .ps .pn { font-family: var(--font-display); font-size: 24px; color: var(--blue-deep); }
-    .ps .pl { font-size: 11px; color: var(--gray-400); margin-top: 2px; }
-    .perfil-sec { padding: 0 24px; margin-bottom: 20px; }
-    .perfil-sec h4 { font-family: var(--font-display); font-size: 13px; color: var(--blue-deep); margin-bottom: 12px; }
-    .badges-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
-    .badge-item {
-      background: var(--white); border-radius: var(--radius-md); padding: 14px 8px; text-align: center;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
-    }
-    .badge-item .bi { font-size: 28px; margin-bottom: 6px; }
-    .badge-item .bn { font-size: 10px; font-weight: 700; color: var(--gray-500); line-height: 1.3; }
-    .qr-card { background: var(--white); border-radius: var(--radius-lg); padding: 20px; text-align: center; box-shadow: var(--shadow-sm); }
-    .qr-placeholder {
-      width: 120px; height: 120px; background: var(--gray-50); border-radius: var(--radius-md);
-      border: 2px dashed var(--gray-200); display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 10px;
-    }
-    .qr-placeholder [data-lucide] { width: 60px; height: 60px; color: var(--gray-300); }
-    .qr-card p { font-size: 12px; color: var(--gray-400); }
+    #perfil { background:var(--surface); padding-bottom:100px; }
+    .pf-hd { background:linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%); padding:54px 28px 32px; text-align:center; border-radius:0 0 32px 32px; position:relative; overflow:hidden; }
+    .pf-hd::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 80%, rgba(212,168,83,0.06) 0%, transparent 50%); }
+    .pf-hd::after { content:''; position:absolute; inset:0; opacity:0.02; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    .pf-av { width:92px; height:92px; border-radius:50%; background:linear-gradient(135deg, var(--gold), var(--gold-warm)); display:flex; align-items:center; justify-content:center; font-size:36px; font-weight:700; color:var(--white); margin:0 auto 14px; border:3px solid rgba(255,255,255,0.12); box-shadow:var(--shadow-glow-gold); position:relative; z-index:2; }
+    .pf-name { font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--white); position:relative; z-index:2; }
+    .pf-lvl { display:inline-flex; align-items:center; gap:6px; background:rgba(212,168,83,0.15); color:var(--gold); padding:5px 16px; border-radius:var(--r-full); font-size:11px; font-weight:700; margin-top:10px; position:relative; z-index:2; border:1px solid rgba(212,168,83,0.15); }
+    .pf-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; padding:22px 28px; }
+    .ps { background:var(--white); border-radius:var(--r-md); padding:16px; text-align:center; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .ps .pn { font-family:var(--font-serif); font-size:26px; font-weight:700; color:var(--text-primary); }
+    .ps .pl { font-size:10px; color:var(--text-muted); margin-top:2px; text-transform:uppercase; letter-spacing:0.5px; font-weight:600; }
+    .pf-sec { padding:0 28px; margin-bottom:22px; }
+    .pf-sec h4 { font-family:var(--font-serif); font-size:15px; color:var(--text-primary); margin-bottom:14px; }
+    .badges { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .bdg { background:var(--white); border-radius:var(--r-md); padding:16px 8px; text-align:center; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); transition:transform 0.15s; }
+    .bdg:active { transform:scale(0.95); }
+    .bdg .bi { font-size:28px; margin-bottom:6px; }
+    .bdg .bn { font-size:10px; font-weight:700; color:var(--text-muted); line-height:1.3; }
+    .qr-card { background:var(--white); border-radius:var(--r-lg); padding:22px; text-align:center; box-shadow:var(--shadow-subtle); border:1px solid var(--border-light); }
+    .qr-ph { width:120px; height:120px; background:var(--surface); border-radius:var(--r-md); border:2px dashed var(--border); display:flex; align-items:center; justify-content:center; margin:0 auto 12px; }
+    .qr-ph [data-lucide] { width:56px; height:56px; color:var(--text-faint); }
+    .qr-card p { font-size:12px; color:var(--text-muted); }
 
-    /* ── Nav Label ── */
-    #navLabel {
-      position: fixed; top: 16px; left: 50%; transform: translateX(-50%);
-      background: rgba(0,0,0,0.75); color: var(--white);
-      padding: 5px 14px; border-radius: var(--radius-full);
-      font-size: 11px; font-weight: 600; z-index: 9999;
-      opacity: 0; transition: opacity 0.25s; pointer-events: none; white-space: nowrap;
-    }
-    #navLabel.show { opacity: 1; }
+    /* ── Nav label ── */
+    #lbl { position:fixed; top:14px; left:50%; transform:translateX(-50%); background:rgba(15,23,42,0.85); backdrop-filter:blur(8px); color:var(--white); padding:5px 16px; border-radius:var(--r-full); font-size:11px; font-weight:600; z-index:9999; opacity:0; transition:opacity 0.25s; pointer-events:none; white-space:nowrap; border:1px solid rgba(255,255,255,0.06); }
+    #lbl.show { opacity:1; }
 
-    @media (max-width: 440px) {
-      body { align-items: flex-start; background: #fff; }
-      .phone-frame { width: 100vw; height: 100vh; height: 100dvh; border-radius: 0; box-shadow: none; }
-      .phone-notch { display: none; }
+    @media (max-width:440px) {
+      body { align-items:flex-start; background:var(--white); }
+      .phone { width:100vw; height:100vh; height:100dvh; border-radius:0; box-shadow:none; }
+      .notch { display:none; }
     }
   </style>
 </head>
 <body>
 
-<div id="navLabel"></div>
+<div id="lbl"></div>
 
-<div class="phone-frame">
-  <div class="phone-notch"></div>
-  <div class="screen-container">
+<div class="phone">
+  <div class="notch"></div>
+  <div class="screens">
 
     <!-- ═══ SPLASH ═══ -->
-    <div class="screen active" id="splash">
-      <div class="splash-logo-wrap">
-        <img src="Logo/arenag3.jpg" alt="Arena G3" onerror="this.style.display='none';this.nextElementSibling.style.display='block';this.nextElementSibling.nextElementSibling.style.display='block'">
-        <div class="logo-fallback">G<span>3</span></div>
-        <div class="logo-sub">ARENA</div>
+    <div class="scr on" id="splash">
+      <div class="splash-particles">
+        <div class="splash-particle sp1"></div><div class="splash-particle sp2"></div>
+        <div class="splash-particle sp3"></div><div class="splash-particle sp4"></div>
+        <div class="splash-particle sp5"></div><div class="splash-particle sp6"></div>
       </div>
-      <div class="splash-tagline">Beach Tennis</div>
+      <div class="splash-ring splash-ring-1"></div>
+      <div class="splash-ring splash-ring-2"></div>
+      <div class="splash-logo">
+        <img src="Logo/arenag3.jpg" alt="Arena G3" onerror="this.style.display='none';this.nextElementSibling.style.display='block';this.nextElementSibling.nextElementSibling.style.display='block'">
+        <div class="fallback">G<span>3</span></div>
+        <div class="fallback-sub">Arena</div>
+      </div>
+      <div class="splash-line"></div>
+      <div class="splash-tag">Beach Tennis</div>
       <div class="splash-city">Sete Lagoas · MG</div>
-      <button class="splash-enter" onclick="go('onboarding')">ENTRAR</button>
-      <svg class="splash-rings" viewBox="0 0 280 280">
-        <circle cx="140" cy="140" r="130"/>
-        <circle cx="140" cy="140" r="100"/>
-        <circle cx="140" cy="140" r="70"/>
-      </svg>
+      <button class="splash-btn" onclick="go('onboarding')">ENTRAR</button>
     </div>
 
     <!-- ═══ ONBOARDING ═══ -->
-    <div class="screen" id="onboarding">
-      <div class="status-bar light">
-        <span>9:41</span>
-        <div class="status-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div>
-      </div>
+    <div class="scr" id="onboarding">
+      <div class="sbar lt"><span>9:41</span><div class="sbar-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div></div>
       <div class="ob-slides">
-        <div class="ob-slide active" data-slide="0">
-          <div class="ob-illus">🏟️</div>
-          <h2>Reserve sua Quadra</h2>
-          <p>12 quadras de areia premium. Escolha o melhor horário e reserve em segundos.</p>
-        </div>
-        <div class="ob-slide" data-slide="1">
-          <div class="ob-illus">🏆</div>
-          <h2>Acompanhe seus Jogos</h2>
-          <p>Veja suas estatísticas, ranking e evolução no beach tennis.</p>
-        </div>
-        <div class="ob-slide" data-slide="2">
-          <div class="ob-illus">🤝</div>
-          <h2>Faça Parte da Comunidade</h2>
-          <p>Eventos, torneios, promoções e tudo sobre a Arena G3.</p>
-        </div>
+        <div class="ob-slide on" data-s="0"><div class="ob-icon">🏟️</div><h2>Reserve sua Quadra</h2><p>12 quadras de areia premium. Escolha o melhor horário e reserve em segundos.</p></div>
+        <div class="ob-slide" data-s="1"><div class="ob-icon">🏆</div><h2>Acompanhe sua Evolução</h2><p>Estatísticas, ranking e histórico de partidas. Veja o quanto você evoluiu.</p></div>
+        <div class="ob-slide" data-s="2"><div class="ob-icon">🤝</div><h2>Faça Parte da Comunidade</h2><p>Eventos, torneios, promoções exclusivas e conexões com outros jogadores.</p></div>
       </div>
-      <div class="ob-footer">
-        <div class="ob-dots">
-          <div class="ob-dot active" data-dot="0"></div>
-          <div class="ob-dot" data-dot="1"></div>
-          <div class="ob-dot" data-dot="2"></div>
-        </div>
-        <button class="btn-primary" id="obBtn" onclick="nextSlide()">Continuar</button>
+      <div class="ob-foot">
+        <div class="ob-dots"><div class="ob-dot on" data-d="0"></div><div class="ob-dot" data-d="1"></div><div class="ob-dot" data-d="2"></div></div>
+        <button class="btn-fill dark" id="obBtn" onclick="nextSlide()">Continuar</button>
         <div class="ob-skip" onclick="go('login')">Pular</div>
       </div>
     </div>
 
     <!-- ═══ LOGIN ═══ -->
-    <div class="screen" id="login">
-      <div class="status-bar light">
-        <span>9:41</span>
-        <div class="status-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div>
+    <div class="scr" id="login">
+      <div class="sbar lt"><span>9:41</span><div class="sbar-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div></div>
+      <div class="login-top">
+        <img src="Logo/arenag3.jpg" alt="Arena G3" onerror="this.style.display='none';document.getElementById('lf2').style.display='block'">
+        <div id="lf2" class="fallback" style="display:none">G<span>3</span> Arena</div>
+        <p class="login-sub">Entre para reservar e jogar</p>
       </div>
-      <div class="login-logo-wrap">
-        <img src="Logo/arenag3.jpg" alt="Arena G3" onerror="this.style.display='none';document.getElementById('loginLogoFallback').style.display='block'">
-        <div id="loginLogoFallback" style="display:none;font-family:var(--font-display);font-size:36px;color:var(--blue-deep);">G<span style="color:var(--orange);">3</span> Arena</div>
-        <p class="login-subtitle">Entre para reservar e jogar</p>
-      </div>
-      <div class="login-form">
-        <div class="input-group"><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
-        <div class="input-group"><label>Senha</label><input type="password" placeholder="••••••••"></div>
-        <button class="btn-orange" onclick="go('home')">Entrar</button>
-      </div>
-      <div class="divider">ou continue com</div>
-      <div class="social-btns">
-        <button class="btn-social" onclick="go('home')">
-          <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
-          Continuar com Google
-        </button>
-        <button class="btn-social" onclick="go('home')">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.32 2.32-2.12 4.53-3.74 4.25z"/></svg>
-          Continuar com Apple
-        </button>
-      </div>
+      <div class="field"><label>E-mail</label><input type="email" placeholder="seu@email.com"></div>
+      <div class="field"><label>Senha</label><input type="password" placeholder="••••••••"></div>
+      <button class="btn-fill gold" onclick="go('home')" style="width:100%">Entrar</button>
+      <div class="login-or">ou continue com</div>
+      <button class="btn-social" onclick="go('home')">
+        <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Continuar com Google
+      </button>
+      <button class="btn-social" onclick="go('home')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="#000"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.32 2.32-2.12 4.53-3.74 4.25z"/></svg>
+        Continuar com Apple
+      </button>
     </div>
 
     <!-- ═══ HOME ═══ -->
-    <div class="screen" id="home">
-      <div class="home-header">
-        <div class="status-bar dark" style="height:auto;position:relative;padding:0;margin-bottom:16px;">
-          <span>9:41</span>
-          <div class="status-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div>
+    <div class="scr" id="home">
+      <div class="home-hd noise">
+        <div class="home-sbar"><span>9:41</span><div class="sbar-icons"><i data-lucide="wifi"></i><i data-lucide="battery"></i></div></div>
+        <div class="home-row">
+          <div><div class="home-greet">Boa tarde,</div><div class="home-name">Evandro</div></div>
+          <div class="home-av">EV</div>
         </div>
-        <div class="home-top">
-          <div>
-            <div class="home-greeting">Boa tarde,</div>
-            <div class="home-username">EVANDRO</div>
-          </div>
-          <div class="home-avatar">EV</div>
-        </div>
-        <div class="home-next-booking">
-          <div class="label">Próxima reserva</div>
-          <div class="booking-row">
-            <div><h4>Quadra 7 · Dupla</h4><p>Hoje · com Rafael, Lucas</p></div>
-            <div class="booking-time">19:00</div>
-          </div>
+        <div class="next-card">
+          <div class="next-label">Próxima reserva</div>
+          <div class="next-row"><div><h4>Quadra 7 · Dupla</h4><p>Hoje · com Rafael, Lucas</p></div><div class="next-time">19:00</div></div>
         </div>
       </div>
-
-      <div class="home-content">
-        <div class="quick-actions">
-          <div class="qa qa-reservar" onclick="go('quadras')">
-            <div class="icon-box"><i data-lucide="layout-grid"></i></div>
-            <span>Reservar</span>
-          </div>
-          <div class="qa qa-ranking" onclick="go('perfil')">
-            <div class="icon-box"><i data-lucide="trophy"></i></div>
-            <span>Ranking</span>
-          </div>
-          <div class="qa qa-eventos" onclick="go('eventos')">
-            <div class="icon-box"><i data-lucide="calendar-days"></i></div>
-            <span>Eventos</span>
-          </div>
-          <div class="qa qa-admin" onclick="go('admin')">
-            <div class="icon-box"><i data-lucide="settings-2"></i></div>
-            <span>Admin</span>
-          </div>
+      <div class="home-body">
+        <div class="qas">
+          <div class="qa qa-reservar" onclick="go('quadras')"><div class="qbox"><i data-lucide="layout-grid"></i></div><span>Reservar</span></div>
+          <div class="qa qa-ranking" onclick="go('perfil')"><div class="qbox"><i data-lucide="trophy"></i></div><span>Ranking</span></div>
+          <div class="qa qa-eventos" onclick="go('eventos')"><div class="qbox"><i data-lucide="calendar-days"></i></div><span>Eventos</span></div>
+          <div class="qa qa-admin" onclick="go('admin')"><div class="qbox"><i data-lucide="settings-2"></i></div><span>Admin</span></div>
         </div>
-
-        <div class="section-hd">
-          <h3>Evento em destaque</h3>
-          <a href="#" onclick="go('eventos');return false;">Ver todos</a>
-        </div>
-        <div class="event-banner" onclick="go('eventos')">
-          <div class="tag">Inscrições abertas</div>
+        <div class="sec-hd"><h3>Evento em Destaque</h3><a href="#" onclick="go('eventos');return false;">Ver todos</a></div>
+        <div class="promo-card" onclick="go('eventos')">
+          <div class="pill">Inscrições abertas</div>
           <h4>Torneio de Páscoa</h4>
           <p>12 e 13 de Abril · Categorias A, B e C</p>
         </div>
-
-        <div class="section-hd">
-          <h3>Aniversariantes</h3>
-          <a href="#" onclick="go('feed');return false;">Ver mural</a>
-        </div>
-        <div class="birthday-card">
-          <div class="birthday-emoji">🎂</div>
-          <div class="birthday-info"><h4>Marcos Silva</h4><p>Faz aniversário hoje! 🎉</p></div>
-        </div>
-        <div class="birthday-card">
-          <div class="birthday-emoji">🎁</div>
-          <div class="birthday-info"><h4>Ana Paula Costa</h4><p>Aniversário em 2 dias</p></div>
-        </div>
+        <div class="sec-hd"><h3>Aniversariantes</h3><a href="#" onclick="go('feed');return false;">Ver mural</a></div>
+        <div class="bday-card"><div class="bday-icon">🎂</div><div class="bday-info"><h4>Marcos Silva</h4><p>Faz aniversário hoje! 🎉</p></div></div>
+        <div class="bday-card"><div class="bday-icon">🎁</div><div class="bday-info"><h4>Ana Paula Costa</h4><p>Aniversário em 2 dias</p></div></div>
       </div>
-
-      <div class="tab-bar">
-        <div class="tab-item active" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="users"></i><span>Comunidade</span></div>
-        <div class="tab-item" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
+      <div class="tabs">
+        <div class="tab on" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
+        <div class="tab" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
+        <div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
+        <div class="tab" onclick="go('feed')"><i data-lucide="users"></i><span>Social</span></div>
+        <div class="tab" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
       </div>
     </div>
 
     <!-- ═══ QUADRAS ═══ -->
-    <div class="screen" id="quadras">
-      <div class="quadras-header">
-        <div class="quadras-title">Reservar Quadra</div>
-        <div class="date-scroll">
-          <div class="date-chip active">Hoje, 27</div>
-          <div class="date-chip">Sex, 28</div>
-          <div class="date-chip">Sáb, 29</div>
-          <div class="date-chip">Dom, 30</div>
-          <div class="date-chip">Seg, 31</div>
-          <div class="date-chip">Ter, 01</div>
-        </div>
+    <div class="scr" id="quadras">
+      <div class="q-hd"><div class="q-title">Reservar Quadra</div>
+        <div class="d-scroll"><div class="d-chip on">Hoje, 27</div><div class="d-chip">Sex, 28</div><div class="d-chip">Sáb, 29</div><div class="d-chip">Dom, 30</div><div class="d-chip">Seg, 31</div><div class="d-chip">Ter, 01</div></div>
       </div>
-      <div class="grid-legend">
-        <div class="leg"><div class="leg-dot free"></div>Livre</div>
-        <div class="leg"><div class="leg-dot occ"></div>Ocupada</div>
-        <div class="leg"><div class="leg-dot cls"></div>Aula</div>
-        <div class="leg"><div class="leg-dot mine"></div>Sua</div>
-      </div>
-      <div class="grid-wrap"><div class="courts-grid" id="courtsGrid"></div></div>
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item active" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="users"></i><span>Comunidade</span></div>
-        <div class="tab-item" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
-      </div>
+      <div class="legend"><div class="leg"><div class="ldot free"></div>Livre</div><div class="leg"><div class="ldot occ"></div>Ocupada</div><div class="leg"><div class="ldot cls"></div>Aula</div><div class="leg"><div class="ldot mine"></div>Sua</div></div>
+      <div class="g-wrap"><div class="g-grid" id="grid"></div></div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab on" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div><div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab" onclick="go('feed')"><i data-lucide="users"></i><span>Social</span></div><div class="tab" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div></div>
     </div>
 
     <!-- ═══ BOOKING DETAIL ═══ -->
-    <div class="screen" id="booking-detail">
-      <div style="padding:54px 24px 40px;">
-        <div class="back-btn" onclick="go('quadras')"><i data-lucide="arrow-left"></i> Voltar</div>
-        <div class="booking-hero">
-          <h3>Quadra 5</h3>
-          <div class="bm-item"><i data-lucide="calendar"></i> Quinta, 27 de Março</div>
-          <div class="bm-item"><i data-lucide="clock"></i> 18:00 – 19:00</div>
-          <div class="bm-item"><i data-lucide="banknote"></i> R$ 120,00 (R$ 30/jogador)</div>
+    <div class="scr" id="booking-detail">
+      <div style="padding:54px 28px 40px;">
+        <div class="back" onclick="go('quadras')"><i data-lucide="arrow-left"></i> Voltar</div>
+        <div class="bk-hero"><h3>Quadra 5</h3>
+          <div class="bk-meta"><i data-lucide="calendar"></i> Quinta, 27 de Março</div>
+          <div class="bk-meta"><i data-lucide="clock"></i> 18:00 – 19:00</div>
+          <div class="bk-meta"><i data-lucide="banknote"></i> R$ 120,00 (R$ 30/jogador)</div>
         </div>
-        <div class="invite-section">
-          <h4>Convidar parceiros</h4>
-          <div class="invite-row">
-            <input class="invite-input" placeholder="Nome ou telefone">
-            <button class="invite-add"><i data-lucide="plus" style="width:18px;height:18px;"></i></button>
-          </div>
-          <div class="invited-chips">
-            <div class="chip">Rafael M. <span style="opacity:.5;cursor:pointer;">✕</span></div>
-            <div class="chip">Lucas T. <span style="opacity:.5;cursor:pointer;">✕</span></div>
-          </div>
+        <div class="inv-sec"><h4>Convidar parceiros</h4>
+          <div class="inv-row"><input class="inv-input" placeholder="Nome ou telefone"><button class="inv-add"><i data-lucide="plus" style="width:16px;height:16px;"></i></button></div>
+          <div class="chips"><div class="chip">Rafael M. <span style="opacity:.4;cursor:pointer">✕</span></div><div class="chip">Lucas T. <span style="opacity:.4;cursor:pointer">✕</span></div></div>
         </div>
-        <button class="btn-confirm" onclick="go('booking-confirm')">Confirmar Reserva</button>
+        <button class="btn-fill gold" onclick="go('booking-confirm')" style="width:100%">Confirmar Reserva</button>
       </div>
     </div>
 
     <!-- ═══ BOOKING CONFIRM ═══ -->
-    <div class="screen" id="booking-confirm">
-      <div class="confirm-ring"><i data-lucide="check"></i></div>
-      <h2 class="confirm-title">Reserva Confirmada!</h2>
-      <p class="confirm-sub">Quadra 5 · Qui, 27/03 · 18:00</p>
+    <div class="scr" id="booking-confirm">
+      <div class="confirm-check"><i data-lucide="check"></i></div>
+      <h2 class="confirm-h">Reserva Confirmada!</h2>
+      <p class="confirm-p">Quadra 5 · Qui, 27/03 · 18:00</p>
       <div class="qr-box"><i data-lucide="qr-code"></i></div>
-      <p class="qr-label">Apresente o QR Code na recepção</p>
-      <button class="btn-home" onclick="go('home')">Voltar ao Início</button>
+      <p class="qr-txt">Apresente o QR Code na recepção</p>
+      <button class="btn-fill dark" onclick="go('home')" style="padding:16px 48px;">Voltar ao Início</button>
     </div>
 
     <!-- ═══ ADMIN ═══ -->
-    <div class="screen" id="admin">
-      <div class="admin-hd">
-        <div class="admin-hd-row">
-          <h2>Painel Admin</h2>
-          <span class="badge-gestor">Gestor</span>
+    <div class="scr" id="admin">
+      <div class="adm-hd"><div class="adm-hd-row"><h2>Painel Admin</h2><span class="badge-g">Gestor</span></div></div>
+      <div class="m-grid">
+        <div class="m-card"><div class="mi"><i data-lucide="gauge" style="color:var(--cyan);"></i></div><div class="mv">78%</div><div class="ml">Ocupação hoje</div><span class="m-chg up">+5%</span></div>
+        <div class="m-card"><div class="mi"><i data-lucide="banknote" style="color:var(--green);"></i></div><div class="mv">R$4.2k</div><div class="ml">Receita do dia</div><span class="m-chg up">+12%</span></div>
+        <div class="m-card"><div class="mi"><i data-lucide="users" style="color:var(--gold);"></i></div><div class="mv">347</div><div class="ml">Alunos ativos</div><span class="m-chg up">+8 novos</span></div>
+        <div class="m-card"><div class="mi"><i data-lucide="alert-triangle" style="color:var(--red);"></i></div><div class="mv">12</div><div class="ml">Inadimplentes</div><span class="m-chg down">+3</span></div>
+      </div>
+      <div class="adm-sec"><div class="sec-hd"><h3>Ocupação por Período</h3></div>
+        <div class="occ-card"><h4>Hoje</h4>
+          <div class="occ-row"><span class="occ-lbl">Manhã</span><div class="occ-trk"><div class="occ-fill" style="width:45%;background:var(--gold);"></div></div><span class="occ-pct">45%</span></div>
+          <div class="occ-row"><span class="occ-lbl">Tarde</span><div class="occ-trk"><div class="occ-fill" style="width:72%;background:var(--cyan);"></div></div><span class="occ-pct">72%</span></div>
+          <div class="occ-row"><span class="occ-lbl">Noite</span><div class="occ-trk"><div class="occ-fill" style="width:95%;background:var(--green);"></div></div><span class="occ-pct">95%</span></div>
         </div>
       </div>
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="mi"><i data-lucide="percent-circle" style="color:var(--blue-bright);width:24px;height:24px;"></i></div>
-          <div class="mv">78%</div><div class="ml">Ocupação hoje</div>
-          <span class="metric-change up">+5% vs ontem</span>
-        </div>
-        <div class="metric-card">
-          <div class="mi"><i data-lucide="banknote" style="color:var(--green);width:24px;height:24px;"></i></div>
-          <div class="mv">R$4.2k</div><div class="ml">Receita do dia</div>
-          <span class="metric-change up">+12%</span>
-        </div>
-        <div class="metric-card">
-          <div class="mi"><i data-lucide="users" style="color:var(--orange);width:24px;height:24px;"></i></div>
-          <div class="mv">347</div><div class="ml">Alunos ativos</div>
-          <span class="metric-change up">+8 novos</span>
-        </div>
-        <div class="metric-card">
-          <div class="mi"><i data-lucide="alert-triangle" style="color:var(--red);width:24px;height:24px;"></i></div>
-          <div class="mv">12</div><div class="ml">Inadimplentes</div>
-          <span class="metric-change down">+3</span>
-        </div>
-      </div>
-
-      <div class="admin-section">
-        <div class="section-hd"><h3>Ocupação por período</h3></div>
-        <div class="occ-card">
-          <div class="occ-row"><span class="occ-label">Manhã</span><div class="occ-track"><div class="occ-fill" style="width:45%;background:var(--orange);"></div></div><span class="occ-pct">45%</span></div>
-          <div class="occ-row"><span class="occ-label">Tarde</span><div class="occ-track"><div class="occ-fill" style="width:72%;background:var(--blue-bright);"></div></div><span class="occ-pct">72%</span></div>
-          <div class="occ-row"><span class="occ-label">Noite</span><div class="occ-track"><div class="occ-fill" style="width:95%;background:var(--green);"></div></div><span class="occ-pct">95%</span></div>
-        </div>
-      </div>
-
-      <div class="admin-section">
-        <div class="section-hd"><h3>Alertas</h3></div>
+      <div class="adm-sec"><div class="sec-hd"><h3>Alertas</h3></div>
         <div class="alert-list">
-          <div class="alert-card" onclick="go('alunos')">
-            <div class="alert-icon" style="background:var(--red-light);"><i data-lucide="credit-card" style="color:var(--red);"></i></div>
-            <div class="alert-info"><h5>Mensalidades vencidas</h5><p>12 alunos com pagamento pendente</p></div>
-            <div class="alert-badge" style="background:var(--red);">12</div>
-          </div>
-          <div class="alert-card">
-            <div class="alert-icon" style="background:var(--orange-light);"><i data-lucide="cake" style="color:var(--orange);"></i></div>
-            <div class="alert-info"><h5>Aniversariantes da semana</h5><p>5 alunos fazem aniversário</p></div>
-            <div class="alert-badge" style="background:var(--orange);">5</div>
-          </div>
-          <div class="alert-card" onclick="go('alunos')">
-            <div class="alert-icon" style="background:var(--blue-light);"><i data-lucide="user-plus" style="color:var(--blue-bright);"></i></div>
-            <div class="alert-info"><h5>Novos cadastros</h5><p>8 alunos esta semana</p></div>
-            <div class="alert-badge" style="background:var(--blue-bright);">8</div>
-          </div>
+          <div class="alert-card" onclick="go('alunos')"><div class="alert-ic" style="background:var(--red-soft);"><i data-lucide="credit-card" style="color:var(--red);"></i></div><div class="alert-txt"><h5>Mensalidades vencidas</h5><p>12 alunos com pagamento pendente</p></div><div class="alert-n" style="background:var(--red);">12</div></div>
+          <div class="alert-card"><div class="alert-ic" style="background:var(--gold-glow);"><i data-lucide="cake" style="color:var(--gold);"></i></div><div class="alert-txt"><h5>Aniversariantes da semana</h5><p>5 alunos fazem aniversário</p></div><div class="alert-n" style="background:var(--gold);">5</div></div>
+          <div class="alert-card" onclick="go('alunos')"><div class="alert-ic" style="background:rgba(0,180,216,0.08);"><i data-lucide="user-plus" style="color:var(--cyan);"></i></div><div class="alert-txt"><h5>Novos cadastros</h5><p>8 alunos esta semana</p></div><div class="alert-n" style="background:var(--cyan);">8</div></div>
         </div>
       </div>
-
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item" onclick="go('alunos')"><i data-lucide="users"></i><span>Alunos</span></div>
-        <div class="tab-item active" onclick="go('admin')"><i data-lucide="bar-chart-2"></i><span>Dashboard</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="bell"></i><span>Avisos</span></div>
-      </div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab" onclick="go('alunos')"><i data-lucide="users"></i><span>Alunos</span></div><div class="tab on" onclick="go('admin')"><i data-lucide="bar-chart-2"></i><span>Dashboard</span></div><div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab" onclick="go('feed')"><i data-lucide="bell"></i><span>Avisos</span></div></div>
     </div>
 
     <!-- ═══ ALUNOS ═══ -->
-    <div class="screen" id="alunos">
-      <div class="alunos-hd">
-        <div class="alunos-hd-row">
-          <h2>Alunos</h2>
-          <span style="font-size:13px;color:var(--gray-400);font-weight:600;">347 cadastrados</span>
-        </div>
-        <div class="search-bar">
-          <i data-lucide="search"></i>
-          <input placeholder="Buscar aluno...">
-        </div>
+    <div class="scr" id="alunos">
+      <div class="al-hd"><div class="al-hd-row"><h2>Alunos</h2><span class="al-count">347 cadastrados</span></div>
+        <div class="search"><i data-lucide="search"></i><input placeholder="Buscar aluno..."></div>
       </div>
-      <div class="filter-row">
-        <div class="fc active">Todos</div>
-        <div class="fc">Ativos</div>
-        <div class="fc">Vencidos</div>
-        <div class="fc">Iniciante</div>
-        <div class="fc">Intermediário</div>
-        <div class="fc">Avançado</div>
+      <div class="f-row"><div class="fc on">Todos</div><div class="fc">Ativos</div><div class="fc">Vencidos</div><div class="fc">Iniciante</div><div class="fc">Intermediário</div><div class="fc">Avançado</div></div>
+      <div class="al-list">
+        <div class="al-card" onclick="go('aluno-detail')"><div class="al-av" style="background:linear-gradient(135deg,#0EA5E9,#0284C7)">MS</div><div class="al-info"><h4>Marcos Silva</h4><p>Intermediário · Plano Pro · 🎂 Hoje!</p></div><span class="st-pill ativo">Ativo</span></div>
+        <div class="al-card" onclick="go('aluno-detail')"><div class="al-av" style="background:linear-gradient(135deg,var(--gold),var(--gold-warm))">AP</div><div class="al-info"><h4>Ana Paula Costa</h4><p>Avançado · Plano Premium</p></div><span class="st-pill ativo">Ativo</span></div>
+        <div class="al-card" onclick="go('aluno-detail')"><div class="al-av" style="background:linear-gradient(135deg,var(--green),#10B981)">RL</div><div class="al-info"><h4>Rafael Lima</h4><p>Iniciante · Plano Basic</p></div><span class="st-pill vencido">Vencido</span></div>
+        <div class="al-card" onclick="go('aluno-detail')"><div class="al-av" style="background:linear-gradient(135deg,var(--purple),#8B5CF6)">CT</div><div class="al-info"><h4>Camila Torres</h4><p>Intermediário · Trial</p></div><span class="st-pill trial">Trial</span></div>
+        <div class="al-card" onclick="go('aluno-detail')"><div class="al-av" style="background:linear-gradient(135deg,var(--red),#EF4444)">PH</div><div class="al-info"><h4>Pedro Henrique</h4><p>Avançado · Plano Pro</p></div><span class="st-pill ativo">Ativo</span></div>
       </div>
-      <div class="alunos-list">
-        <div class="aluno-card" onclick="go('aluno-detail')">
-          <div class="aluno-av" style="background:linear-gradient(135deg,#00A3E0,#0077B6);">MS</div>
-          <div class="aluno-info"><h4>Marcos Silva</h4><p>Intermediário · Plano Pro · 🎂 Hoje!</p></div>
-          <span class="status-pill ativo">Ativo</span>
-        </div>
-        <div class="aluno-card" onclick="go('aluno-detail')">
-          <div class="aluno-av" style="background:linear-gradient(135deg,#F5A623,#FF8C00);">AP</div>
-          <div class="aluno-info"><h4>Ana Paula Costa</h4><p>Avançado · Plano Premium</p></div>
-          <span class="status-pill ativo">Ativo</span>
-        </div>
-        <div class="aluno-card" onclick="go('aluno-detail')">
-          <div class="aluno-av" style="background:linear-gradient(135deg,#2ECC71,#27AE60);">RL</div>
-          <div class="aluno-info"><h4>Rafael Lima</h4><p>Iniciante · Plano Basic</p></div>
-          <span class="status-pill vencido">Vencido</span>
-        </div>
-        <div class="aluno-card" onclick="go('aluno-detail')">
-          <div class="aluno-av" style="background:linear-gradient(135deg,#9B59B6,#8E44AD);">CT</div>
-          <div class="aluno-info"><h4>Camila Torres</h4><p>Intermediário · Trial</p></div>
-          <span class="status-pill trial">Trial</span>
-        </div>
-        <div class="aluno-card" onclick="go('aluno-detail')">
-          <div class="aluno-av" style="background:linear-gradient(135deg,#E74C3C,#C0392B);">PH</div>
-          <div class="aluno-info"><h4>Pedro Henrique</h4><p>Avançado · Plano Pro</p></div>
-          <span class="status-pill ativo">Ativo</span>
-        </div>
-      </div>
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item active" onclick="go('alunos')"><i data-lucide="users"></i><span>Alunos</span></div>
-        <div class="tab-item" onclick="go('admin')"><i data-lucide="bar-chart-2"></i><span>Dashboard</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="bell"></i><span>Avisos</span></div>
-      </div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab on" onclick="go('alunos')"><i data-lucide="users"></i><span>Alunos</span></div><div class="tab" onclick="go('admin')"><i data-lucide="bar-chart-2"></i><span>Dashboard</span></div><div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab" onclick="go('feed')"><i data-lucide="bell"></i><span>Avisos</span></div></div>
     </div>
 
     <!-- ═══ ALUNO DETAIL ═══ -->
-    <div class="screen" id="aluno-detail">
-      <div class="aluno-detail-hd">
-        <div class="back-btn" onclick="go('alunos')"><i data-lucide="arrow-left"></i> Voltar</div>
-        <div class="detail-av">MS</div>
-        <div class="detail-name">Marcos Silva</div>
-        <div class="detail-level">⭐ Intermediário</div>
-        <div class="detail-tags">
-          <span class="detail-tag">Plano Pro</span>
-          <span class="detail-tag">Torneio</span>
-          <span class="detail-tag">🎂 Hoje!</span>
-        </div>
+    <div class="scr" id="aluno-detail">
+      <div class="ad-hd"><div class="back" onclick="go('alunos')"><i data-lucide="arrow-left"></i> Voltar</div>
+        <div class="ad-av">MS</div><div class="ad-name">Marcos Silva</div><div class="ad-level">⭐ Intermediário</div>
+        <div class="ad-tags"><span class="ad-tag">Plano Pro</span><span class="ad-tag">Torneio</span><span class="ad-tag">🎂 Hoje!</span></div>
       </div>
-      <div class="stats-row">
-        <div class="stat-box"><div class="sn">24</div><div class="sl">Jogos/mês</div></div>
-        <div class="stat-box"><div class="sn">92%</div><div class="sl">Frequência</div></div>
-        <div class="stat-box"><div class="sn">3</div><div class="sl">Torneios</div></div>
+      <div class="stats-row"><div class="stat-box"><div class="sn">24</div><div class="sl">Jogos/mês</div></div><div class="stat-box"><div class="sn">92%</div><div class="sl">Frequência</div></div><div class="stat-box"><div class="sn">3</div><div class="sl">Torneios</div></div></div>
+      <div class="info-sec"><h4>Informações</h4>
+        <div class="info-r"><span class="lbl">Telefone</span><span class="val">(31) 99876-5432</span></div>
+        <div class="info-r"><span class="lbl">E-mail</span><span class="val">marcos@email.com</span></div>
+        <div class="info-r"><span class="lbl">Aniversário</span><span class="val">27/03/1990 🎂</span></div>
+        <div class="info-r"><span class="lbl">Cadastro</span><span class="val">15/01/2026</span></div>
+        <div class="info-r"><span class="lbl">Plano</span><span class="val" style="color:var(--green)">Pro · Ativo</span></div>
+        <div class="info-r"><span class="lbl">Vencimento</span><span class="val">15/04/2026</span></div>
       </div>
-      <div class="info-section">
-        <h4>Informações</h4>
-        <div class="info-row"><span class="lbl">Telefone</span><span class="val">(31) 99876-5432</span></div>
-        <div class="info-row"><span class="lbl">E-mail</span><span class="val">marcos@email.com</span></div>
-        <div class="info-row"><span class="lbl">Aniversário</span><span class="val">27/03/1990 🎂</span></div>
-        <div class="info-row"><span class="lbl">Cadastro</span><span class="val">15/01/2026</span></div>
-        <div class="info-row"><span class="lbl">Plano</span><span class="val" style="color:var(--green);">Pro · Ativo</span></div>
-        <div class="info-row"><span class="lbl">Vencimento</span><span class="val">15/04/2026</span></div>
-      </div>
-      <div class="info-section">
-        <h4>Quadras favoritas</h4>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <span style="background:var(--blue-light);color:var(--blue-primary);padding:7px 16px;border-radius:20px;font-size:13px;font-weight:600;">Quadra 7</span>
-          <span style="background:var(--blue-light);color:var(--blue-primary);padding:7px 16px;border-radius:20px;font-size:13px;font-weight:600;">Quadra 3</span>
-          <span style="background:var(--blue-light);color:var(--blue-primary);padding:7px 16px;border-radius:20px;font-size:13px;font-weight:600;">Quadra 11</span>
-        </div>
-      </div>
+      <div class="info-sec"><h4>Quadras Favoritas</h4><div style="display:flex;gap:8px;flex-wrap:wrap;"><span class="fav-chip">Quadra 7</span><span class="fav-chip">Quadra 3</span><span class="fav-chip">Quadra 11</span></div></div>
     </div>
 
     <!-- ═══ EVENTOS ═══ -->
-    <div class="screen" id="eventos">
-      <div class="eventos-hd"><h2>Eventos & Torneios</h2></div>
-      <div class="ev-card">
-        <div class="ev-banner" style="background:linear-gradient(135deg,var(--orange),var(--orange-warm));">🏆</div>
-        <div class="ev-body">
-          <div class="ev-date"><i data-lucide="calendar"></i> 12–13 ABR 2026</div>
-          <h4>Torneio de Páscoa</h4>
-          <p>Categorias A, B e C. Masculino, feminino e misto. Premiação em dinheiro + troféus.</p>
-        </div>
-        <div class="ev-footer">
-          <span class="ev-spots"><strong>32/64</strong> vagas preenchidas</span>
-          <button class="btn-inscricao">Inscrever</button>
-        </div>
-      </div>
-      <div class="ev-card">
-        <div class="ev-banner" style="background:linear-gradient(135deg,var(--blue-bright),var(--blue-primary));">🎉</div>
-        <div class="ev-body">
-          <div class="ev-date"><i data-lucide="calendar"></i> 05 ABR 2026</div>
-          <h4>Open Day – Aula Gratuita</h4>
-          <p>Traga um amigo. Aula introdutória grátis + desconto no primeiro mês.</p>
-        </div>
-        <div class="ev-footer">
-          <span class="ev-spots"><strong>18/30</strong> vagas</span>
-          <button class="btn-inscricao">Inscrever</button>
-        </div>
-      </div>
-      <div class="ev-card">
-        <div class="ev-banner" style="background:linear-gradient(135deg,#2ECC71,#27AE60);">🏅</div>
-        <div class="ev-body">
-          <div class="ev-date"><i data-lucide="calendar"></i> 26 ABR 2026</div>
-          <h4>Ranking Mensal – Abril</h4>
-          <p>Disputas valendo pontos. Inscrição gratuita para mensalistas.</p>
-        </div>
-        <div class="ev-footer">
-          <span class="ev-spots"><strong>Aberto</strong></span>
-          <button class="btn-inscricao">Inscrever</button>
-        </div>
-      </div>
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
-        <div class="tab-item active" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="users"></i><span>Comunidade</span></div>
-        <div class="tab-item" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
-      </div>
+    <div class="scr" id="eventos">
+      <div class="ev-hd"><h2>Eventos & Torneios</h2></div>
+      <div class="ev-card"><div class="ev-banner" style="background:linear-gradient(135deg,var(--gold),#C4912F);">🏆</div><div class="ev-body"><div class="ev-date"><i data-lucide="calendar"></i> 12–13 ABR 2026</div><h4>Torneio de Páscoa</h4><p>Categorias A, B e C. Masculino, feminino e misto. Premiação + troféus.</p></div><div class="ev-foot"><span class="ev-spots"><strong>32/64</strong> vagas</span><button class="btn-sm gold">Inscrever</button></div></div>
+      <div class="ev-card"><div class="ev-banner" style="background:linear-gradient(135deg,var(--cyan),var(--blue));">🎉</div><div class="ev-body"><div class="ev-date"><i data-lucide="calendar"></i> 05 ABR 2026</div><h4>Open Day – Aula Gratuita</h4><p>Traga um amigo. Aula introdutória grátis + desconto no primeiro mês.</p></div><div class="ev-foot"><span class="ev-spots"><strong>18/30</strong> vagas</span><button class="btn-sm gold">Inscrever</button></div></div>
+      <div class="ev-card"><div class="ev-banner" style="background:linear-gradient(135deg,var(--green),#10B981);">🏅</div><div class="ev-body"><div class="ev-date"><i data-lucide="calendar"></i> 26 ABR 2026</div><h4>Ranking Mensal – Abril</h4><p>Disputas valendo pontos. Inscrição gratuita para mensalistas.</p></div><div class="ev-foot"><span class="ev-spots"><strong>Aberto</strong></span><button class="btn-sm gold">Inscrever</button></div></div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div><div class="tab on" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab" onclick="go('feed')"><i data-lucide="users"></i><span>Social</span></div><div class="tab" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div></div>
     </div>
 
     <!-- ═══ FEED ═══ -->
-    <div class="screen" id="feed">
+    <div class="scr" id="feed">
       <div class="feed-hd"><h2>Comunidade</h2></div>
-      <div class="feed-item">
-        <div class="feed-row">
-          <div class="feed-av">G3</div>
-          <div class="feed-meta"><h5>Arena G3</h5><span>Hoje, 10:30</span></div>
-          <span class="feed-tag tag-promo">Promo</span>
-        </div>
-        <div class="feed-body">Traga um amigo e ganhe 20% de desconto na próxima reserva! Válido até 05/04. Use o código <strong>AMIGOG3</strong> no app.</div>
-      </div>
-      <div class="feed-item">
-        <div class="feed-row">
-          <div class="feed-av">G3</div>
-          <div class="feed-meta"><h5>Arena G3</h5><span>Hoje, 08:00</span></div>
-          <span class="feed-tag tag-niver">Niver</span>
-        </div>
-        <div class="feed-body">Parabéns ao nosso jogador <strong>Marcos Silva</strong> que completa mais um ano hoje! 🎂🏐</div>
-      </div>
-      <div class="feed-item">
-        <div class="feed-row">
-          <div class="feed-av">G3</div>
-          <div class="feed-meta"><h5>Arena G3</h5><span>Ontem, 20:15</span></div>
-          <span class="feed-tag tag-result">Resultado</span>
-        </div>
-        <div class="feed-body">Torneio Relâmpago concluído! 🏆 Campeões: <strong>Ana Paula & Marcos</strong> (Cat. B). Parabéns a todos!</div>
-      </div>
-      <div class="feed-item">
-        <div class="feed-row">
-          <div class="feed-av">G3</div>
-          <div class="feed-meta"><h5>Arena G3</h5><span>25/03, 14:00</span></div>
-          <span class="feed-tag tag-aviso">Aviso</span>
-        </div>
-        <div class="feed-body">Manutenção programada nas Quadras 1 e 2 no sábado (29/03) pela manhã. Quadras voltam às 14h.</div>
-      </div>
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item active" onclick="go('feed')"><i data-lucide="users"></i><span>Comunidade</span></div>
-        <div class="tab-item" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
-      </div>
+      <div class="feed-item"><div class="feed-row"><div class="feed-av">G3</div><div class="feed-meta"><h5>Arena G3</h5><span>Hoje, 10:30</span></div><span class="feed-tag tag-promo">Promo</span></div><div class="feed-body">Traga um amigo e ganhe 20% de desconto na próxima reserva! Válido até 05/04. Use o código <strong>AMIGOG3</strong>.</div></div>
+      <div class="feed-item"><div class="feed-row"><div class="feed-av">G3</div><div class="feed-meta"><h5>Arena G3</h5><span>Hoje, 08:00</span></div><span class="feed-tag tag-niver">Niver</span></div><div class="feed-body">Parabéns ao nosso jogador <strong>Marcos Silva</strong> que completa mais um ano hoje! 🎂🏐</div></div>
+      <div class="feed-item"><div class="feed-row"><div class="feed-av">G3</div><div class="feed-meta"><h5>Arena G3</h5><span>Ontem, 20:15</span></div><span class="feed-tag tag-result">Resultado</span></div><div class="feed-body">Torneio Relâmpago concluído! 🏆 Campeões: <strong>Ana Paula & Marcos</strong> (Cat. B).</div></div>
+      <div class="feed-item"><div class="feed-row"><div class="feed-av">G3</div><div class="feed-meta"><h5>Arena G3</h5><span>25/03, 14:00</span></div><span class="feed-tag tag-aviso">Aviso</span></div><div class="feed-body">Manutenção nas Quadras 1 e 2 no sábado (29/03) pela manhã. Quadras voltam às 14h.</div></div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div><div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab on" onclick="go('feed')"><i data-lucide="users"></i><span>Social</span></div><div class="tab" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div></div>
     </div>
 
     <!-- ═══ PERFIL ═══ -->
-    <div class="screen" id="perfil">
-      <div class="perfil-hd">
-        <div class="perfil-av">EV</div>
-        <div class="perfil-name">EVANDRO</div>
-        <div class="perfil-lvl"><i data-lucide="star" style="width:13px;height:13px;fill:currentColor;"></i> Intermediário · Nível 4.2</div>
-      </div>
-      <div class="perfil-stats">
-        <div class="ps"><div class="pn">32</div><div class="pl">Jogos/mês</div></div>
-        <div class="ps"><div class="pn">7</div><div class="pl">Torneios</div></div>
-        <div class="ps"><div class="pn">#12</div><div class="pl">Ranking</div></div>
-      </div>
-      <div class="perfil-sec">
-        <h4>Conquistas</h4>
-        <div class="badges-grid">
-          <div class="badge-item"><div class="bi">🔥</div><div class="bn">Frequência 100%</div></div>
-          <div class="badge-item"><div class="bi">🏆</div><div class="bn">Campeão Mar/26</div></div>
-          <div class="badge-item"><div class="bi">🌅</div><div class="bn">Madrugador</div></div>
-          <div class="badge-item"><div class="bi">👥</div><div class="bn">Indicou 5+</div></div>
-          <div class="badge-item"><div class="bi">⚡</div><div class="bn">10 vitórias</div></div>
-          <div class="badge-item"><div class="bi">🎯</div><div class="bn">1 ano de Arena</div></div>
-        </div>
-      </div>
-      <div class="perfil-sec">
-        <h4>QR Code – Check-in</h4>
-        <div class="qr-card">
-          <div class="qr-placeholder"><i data-lucide="qr-code"></i></div>
-          <p>Apresente na recepção da Arena G3</p>
-        </div>
-      </div>
-      <div class="tab-bar">
-        <div class="tab-item" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div>
-        <div class="tab-item" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div>
-        <div class="tab-item" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div>
-        <div class="tab-item" onclick="go('feed')"><i data-lucide="users"></i><span>Comunidade</span></div>
-        <div class="tab-item active" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div>
-      </div>
+    <div class="scr" id="perfil">
+      <div class="pf-hd noise"><div class="pf-av">EV</div><div class="pf-name">Evandro</div><div class="pf-lvl"><i data-lucide="star" style="width:12px;height:12px;fill:currentColor;"></i> Intermediário · Nível 4.2</div></div>
+      <div class="pf-stats"><div class="ps"><div class="pn">32</div><div class="pl">Jogos/mês</div></div><div class="ps"><div class="pn">7</div><div class="pl">Torneios</div></div><div class="ps"><div class="pn">#12</div><div class="pl">Ranking</div></div></div>
+      <div class="pf-sec"><h4>Conquistas</h4><div class="badges">
+        <div class="bdg"><div class="bi">🔥</div><div class="bn">Frequência 100%</div></div>
+        <div class="bdg"><div class="bi">🏆</div><div class="bn">Campeão Mar/26</div></div>
+        <div class="bdg"><div class="bi">🌅</div><div class="bn">Madrugador</div></div>
+        <div class="bdg"><div class="bi">👥</div><div class="bn">Indicou 5+</div></div>
+        <div class="bdg"><div class="bi">⚡</div><div class="bn">10 vitórias</div></div>
+        <div class="bdg"><div class="bi">🎯</div><div class="bn">1 ano de Arena</div></div>
+      </div></div>
+      <div class="pf-sec"><h4>QR Code – Check-in</h4><div class="qr-card"><div class="qr-ph"><i data-lucide="qr-code"></i></div><p>Apresente na recepção da Arena G3</p></div></div>
+      <div class="tabs"><div class="tab" onclick="go('home')"><i data-lucide="house"></i><span>Home</span></div><div class="tab" onclick="go('quadras')"><i data-lucide="layout-grid"></i><span>Quadras</span></div><div class="tab" onclick="go('eventos')"><i data-lucide="calendar"></i><span>Eventos</span></div><div class="tab" onclick="go('feed')"><i data-lucide="users"></i><span>Social</span></div><div class="tab on" onclick="go('perfil')"><i data-lucide="user-round"></i><span>Perfil</span></div></div>
     </div>
 
-  </div><!-- screen-container -->
-</div><!-- phone-frame -->
+  </div>
+</div>
 
 <script>
-  // ── Navigation ──
-  const labels = { splash:'Splash', onboarding:'Onboarding', login:'Login', home:'Home', quadras:'Quadras', 'booking-detail':'Detalhe da Reserva', 'booking-confirm':'Confirmação', admin:'Painel Admin', alunos:'Lista de Alunos', 'aluno-detail':'Detalhe do Aluno', eventos:'Eventos', feed:'Comunidade', perfil:'Perfil' };
+  const names = { splash:'Splash', onboarding:'Onboarding', login:'Login', home:'Home', quadras:'Quadras', 'booking-detail':'Detalhe da Reserva', 'booking-confirm':'Confirmação', admin:'Painel Admin', alunos:'Alunos', 'aluno-detail':'Detalhe do Aluno', eventos:'Eventos', feed:'Comunidade', perfil:'Perfil' };
 
   function go(id) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.scr').forEach(s => s.classList.remove('on'));
     const el = document.getElementById(id);
     if (!el) return;
-    el.classList.add('active');
+    el.classList.add('on');
     el.scrollTop = 0;
-    lucide.createIcons(); // re-render icons on newly visible screen
-
-    const lbl = document.getElementById('navLabel');
-    lbl.textContent = labels[id] || id;
+    lucide.createIcons();
+    const lbl = document.getElementById('lbl');
+    lbl.textContent = names[id] || id;
     lbl.classList.add('show');
     clearTimeout(lbl._t);
-    lbl._t = setTimeout(() => lbl.classList.remove('show'), 1600);
+    lbl._t = setTimeout(() => lbl.classList.remove('show'), 1500);
   }
 
-  // ── Onboarding ──
   let slide = 0;
   function nextSlide() {
     slide++;
     if (slide > 2) { go('login'); slide = 0; return; }
-    document.querySelectorAll('.ob-slide').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.ob-dot').forEach(d => d.classList.remove('active'));
-    document.querySelector(`.ob-slide[data-slide="${slide}"]`).classList.add('active');
-    document.querySelector(`.ob-dot[data-dot="${slide}"]`).classList.add('active');
-    if (slide === 2) { const b = document.getElementById('obBtn'); b.textContent = 'Começar'; b.style.background = 'var(--orange)'; }
+    document.querySelectorAll('.ob-slide').forEach(s => s.classList.remove('on'));
+    document.querySelectorAll('.ob-dot').forEach(d => d.classList.remove('on'));
+    document.querySelector(`.ob-slide[data-s="${slide}"]`)?.classList.add('on');
+    document.querySelector(`.ob-dot[data-d="${slide}"]`)?.classList.add('on');
+    if (slide === 2) { const b = document.getElementById('obBtn'); b.textContent = 'Começar'; b.className = 'btn-fill gold'; }
   }
 
-  // ── Courts Grid ──
   function buildGrid() {
     const times = ['07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00','21:00'];
-    let html = '<div class="gh-cell"></div>';
-    for (let c=1;c<=6;c++) html += `<div class="gh-cell">Q${c}</div>`;
+    let h = '<div class="gh"></div>';
+    for (let c=1;c<=6;c++) h += `<div class="gh">Q${c}</div>`;
     times.forEach((t,ti) => {
-      html += `<div class="g-time">${t}</div>`;
+      h += `<div class="gt">${t}</div>`;
       for (let c=1;c<=6;c++) {
         const seed = (ti*7+c*13)%17;
         let cls, lbl='';
         if (ti===11&&c===5) { cls='mine'; lbl='Você'; }
-        else if (seed<6)    { cls='free'; }
-        else if (seed<10)   { cls='occ';  lbl=''; }
-        else if (seed<13)   { cls='cls';  lbl='Aula'; }
-        else                { cls='free'; }
-        const click = cls==='free' ? `onclick="go('booking-detail')"` : '';
-        html += `<div class="g-cell ${cls}" ${click}>${lbl}</div>`;
+        else if (seed<6) cls='free';
+        else if (seed<10) { cls='occ'; }
+        else if (seed<13) { cls='cls'; lbl='Aula'; }
+        else cls='free';
+        const ck = cls==='free' ? `onclick="go('booking-detail')"` : '';
+        h += `<div class="gc ${cls}" ${ck}>${lbl}</div>`;
       }
     });
-    document.getElementById('courtsGrid').innerHTML = html;
+    document.getElementById('grid').innerHTML = h;
   }
 
-  // ── Chips ──
   document.addEventListener('click', e => {
-    if (e.target.classList.contains('date-chip')) { document.querySelectorAll('.date-chip').forEach(c=>c.classList.remove('active')); e.target.classList.add('active'); }
-    if (e.target.classList.contains('fc'))        { document.querySelectorAll('.fc').forEach(c=>c.classList.remove('active'));        e.target.classList.add('active'); }
+    if (e.target.classList.contains('d-chip')) { document.querySelectorAll('.d-chip').forEach(c=>c.classList.remove('on')); e.target.classList.add('on'); }
+    if (e.target.classList.contains('fc')) { document.querySelectorAll('.fc').forEach(c=>c.classList.remove('on')); e.target.classList.add('on'); }
   });
 
-  // ── Init ──
   buildGrid();
   lucide.createIcons();
 </script>
